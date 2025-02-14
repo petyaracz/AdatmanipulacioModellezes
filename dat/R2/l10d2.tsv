@@ -1,0 +1,776 @@
+society	region	hierarchy_of_larger_community	high_gods
+!Kung	Southern Africa	1	3
+Dorobo	East Tropical Africa	1	1
+Nama	Southern Africa	2	1
+Mbuti	West-Central Tropical Africa	1	1
+Sandawe	East Tropical Africa	2	2
+Naron	Southern Africa	1	2
+Hadza	East Tropical Africa	1	1
+Pondo Xhosa	Southern Africa	3	1
+Tswana	Southern Africa	3	4
+Lovedu	Southern Africa	3	2
+Shona	South Tropical Africa	3	4
+Swazi	Southern Africa	4	1
+Lozi	South Tropical Africa	4	2
+Mbundu	South Tropical Africa	3	2
+Venda	Southern Africa	3	3
+Sotho	Southern Africa	4	1
+Ndebele	South Tropical Africa	4	2
+Ila	South Tropical Africa	2	2
+Chewa	South Tropical Africa	3	1
+Luvale	South Tropical Africa	2	2
+Tonga	South Tropical Africa	1	2
+Suku	West-Central Tropical Africa	4	2
+Lele	West-Central Tropical Africa	2	1
+Luchazi	South Tropical Africa	2	2
+Bemba	South Tropical Africa	3	3
+Plateau Tonga	South Tropical Africa	1	3
+Buye	West-Central Tropical Africa	3	2
+Lala	South Tropical Africa	2	2
+Luapula	South Tropical Africa	3	3
+Tumbuka	South Tropical Africa	3	3
+Kuba	West-Central Tropical Africa	3	2
+Mambwe	Northeast Tropical Africa	2	2
+Lamba	South Tropical Africa	3	2
+Yao	South Tropical Africa	2	1
+Ngoni	South Tropical Africa	4	1
+Bena	East Tropical Africa	3	4
+Kiga	West-Central Tropical Africa	1	2
+Luguru	East Tropical Africa	1	2
+Iwa	South Tropical Africa	3	2
+Ngonde	South Tropical Africa	3	1
+Safwa	East Tropical Africa	2	2
+Fipa	East Tropical Africa	3	2
+Nyoro	East Tropical Africa	4	2
+Nyamwezi	East Tropical Africa	3	2
+Pimbwe	East Tropical Africa	3	2
+Sukuma	East Tropical Africa	3	2
+Zigula	East Tropical Africa	1	2
+Hadimu	East Tropical Africa	4	4
+Chagga	East Tropical Africa	2	1
+Digo	East Tropical Africa	2	4
+Giriama	East Tropical Africa	4	1
+Kamba	East Tropical Africa	2	2
+Kikuyu	East Tropical Africa	1	3
+Haya	East Tropical Africa	3	2
+Konjo	East Tropical Africa	1	2
+Nyankole	East Tropical Africa	4	2
+Sumbwa	East Tropical Africa	3	2
+Toro	East Tropical Africa	4	2
+Zinza	East Tropical Africa	4	2
+Kaguru	East Tropical Africa	2	2
+Ngulu	East Tropical Africa	1	2
+Nyakyusa	East Tropical Africa	3	2
+Ganda	East Tropical Africa	4	2
+Gisu	East Tropical Africa	2	2
+Amba	West-Central Tropical Africa	1	1
+Banyaruanda	West-Central Tropical Africa	4	2
+Songola	West-Central Tropical Africa	2	2
+Duala	West-Central Tropical Africa	3	2
+Ha	East Tropical Africa	3	2
+Rega	West-Central Tropical Africa	2	2
+Songye	West-Central Tropical Africa	1	2
+Kpe	West-Central Tropical Africa	1	2
+Ngala	West-Central Tropical Africa	2	2
+Fang	West-Central Tropical Africa	1	2
+Ngombe	West-Central Tropical Africa	2	1
+Nkundo	West-Central Tropical Africa	3	2
+Bamum	West-Central Tropical Africa	4	3
+Banen	West-Central Tropical Africa	1	2
+Nsaw	West-Central Tropical Africa	3	3
+Luba	West-Central Tropical Africa	4	2
+Baboa	West-Central Tropical Africa	3	1
+Rundi	West-Central Tropical Africa	4	2
+Fut	West-Central Tropical Africa	2	3
+Fon	West Tropical Africa	4	1
+Igbo	West Tropical Africa	2	2
+Toma	West Tropical Africa	2	2
+Ebira	West Tropical Africa	2	2
+Sherbro	West Tropical Africa	3	2
+Kpelle	West Tropical Africa	2	2
+Efik	West Tropical Africa	2	2
+Ibibio	West Tropical Africa	2	2
+Itsekiri	West Tropical Africa	2	2
+Afikpo	West Tropical Africa	2	1
+Edo	West Tropical Africa	4	2
+Isoko	West Tropical Africa	2	2
+Gbagyi	West Tropical Africa	2	3
+Ashanti	West Tropical Africa	3	2
+Egba	West Tropical Africa	3	2
+Ekiti	West Tropical Africa	3	2
+Ife	West Tropical Africa	4	2
+Ewe	West Tropical Africa	3	2
+Yako	West Tropical Africa	1	1
+Fante	West Tropical Africa	2	2
+Ga	West Tropical Africa	1	1
+Mende	West Tropical Africa	2	2
+Tura	West Tropical Africa	NA	2
+Gbande	West Tropical Africa	2	2
+Ngere	West Tropical Africa	2	2
+Temne	West Tropical Africa	3	2
+Oyo Yoruba	West Tropical Africa	4	2
+Bete	West Tropical Africa	1	1
+Nupe	West Tropical Africa	3	4
+Bambara	West Tropical Africa	2	1
+Konkomba	West Tropical Africa	1	2
+Nankanse	West Tropical Africa	1	2
+Mossi (Yatenga)	West Tropical Africa	3	2
+Bassari	West Tropical Africa	2	2
+Soninke	West Tropical Africa	3	4
+Diula	West Tropical Africa	2	4
+Nononke	West Tropical Africa	2	4
+Tallensi	West Tropical Africa	1	1
+Kusasi	West Tropical Africa	1	2
+Mossi (Ouagadougou)	West Tropical Africa	4	2
+Kabre	West Tropical Africa	1	2
+Birifor	West Tropical Africa	1	2
+Moba	West Tropical Africa	2	2
+Tem	West Tropical Africa	3	2
+Bisa	West Tropical Africa	2	2
+Yalunka	West Tropical Africa	2	4
+Futajalonke	West Tropical Africa	3	4
+Bozo	West Tropical Africa	2	4
+Coniagui	West Tropical Africa	2	2
+Katab	West Tropical Africa	1	3
+Chawai	West Tropical Africa	2	3
+Basa	West Tropical Africa	2	2
+Dakakari	West Tropical Africa	1	2
+Kamuku	West Tropical Africa	NA	2
+Birom	West Tropical Africa	2	1
+Adara	West Tropical Africa	2	2
+Kagoro	West Tropical Africa	2	2
+Tiv	West Tropical Africa	2	1
+Gude	West Tropical Africa	1	2
+Kapsiki	West-Central Tropical Africa	2	2
+Podokwo	West-Central Tropical Africa	2	2
+Gure	West Tropical Africa	1	2
+Mafa	West-Central Tropical Africa	1	2
+Anaguta	West Tropical Africa	1	3
+Banda	West-Central Tropical Africa	1	2
+Mangbetu	West-Central Tropical Africa	3	2
+Fali	West-Central Tropical Africa	1	2
+Mbum	West-Central Tropical Africa	2	2
+Mundang	West-Central Tropical Africa	2	2
+Namshi	West-Central Tropical Africa	NA	1
+Gisiga	West-Central Tropical Africa	2	2
+Kotoko	West-Central Tropical Africa	3	4
+Tupuri	West-Central Tropical Africa	1	3
+Bagirmi	Northeast Tropical Africa	4	4
+Bwaka	West-Central Tropical Africa	2	2
+Mbandja	West-Central Tropical Africa	NA	2
+Ngbandi	West-Central Tropical Africa	1	2
+Popoi	West-Central Tropical Africa	2	2
+Lendu	West-Central Tropical Africa	2	2
+Azande	West-Central Tropical Africa	3	3
+Lese	West-Central Tropical Africa	2	2
+Logo	West-Central Tropical Africa	2	2
+Lugbara	East Tropical Africa	2	2
+Madi	Northeast Tropical Africa	2	2
+Bongo	Northeast Tropical Africa	2	2
+Mao	Northeast Tropical Africa	2	2
+Mamvu	West-Central Tropical Africa	1	2
+Shilluk	Northeast Tropical Africa	2	2
+Gbaya	West-Central Tropical Africa	1	2
+Masa	Northeast Tropical Africa	1	2
+Teso	East Tropical Africa	2	2
+Acholi	East Tropical Africa	2	2
+Dinka	Northeast Tropical Africa	2	2
+Lotuko	Northeast Tropical Africa	2	3
+Pojulu	Northeast Tropical Africa	1	2
+Kakwa	Northeast Tropical Africa	2	2
+Kuku	Northeast Tropical Africa	2	2
+Alur	West-Central Tropical Africa	2	2
+Bodi	Northeast Tropical Africa	2	2
+Suri	Northeast Tropical Africa	2	2
+Jie	East Tropical Africa	2	3
+Plains Suk	East Tropical Africa	2	2
+Toposa	Northeast Tropical Africa	2	2
+Hill Suk	East Tropical Africa	2	2
+Nuer	Northeast Tropical Africa	1	4
+Lango	East Tropical Africa	1	3
+Turkana	East Tropical Africa	1	3
+Luo	East Tropical Africa	2	2
+Nandi	East Tropical Africa	2	2
+Bari	Northeast Tropical Africa	1	2
+Kipsigis	East Tropical Africa	3	2
+Konso	Northeast Tropical Africa	1	2
+Somali (Esa)	Northeast Tropical Africa	4	4
+Arusi	Northeast Tropical Africa	3	2
+Gibe	Northeast Tropical Africa	4	4
+Burji	Northeast Tropical Africa	NA	2
+Sidama	Northeast Tropical Africa	2	2
+Arbore	Northeast Tropical Africa	2	2
+Banna	Northeast Tropical Africa	2	2
+Somali (Dolbahanta)	Northeast Tropical Africa	3	4
+Galab	Northeast Tropical Africa	2	2
+Hamar	Northeast Tropical Africa	2	2
+Male	Northeast Tropical Africa	3	2
+Bako	Northeast Tropical Africa	3	2
+Dime	Northeast Tropical Africa	2	2
+Shangama	Northeast Tropical Africa	2	1
+Ubamer	Northeast Tropical Africa	3	1
+Anfillo	Northeast Tropical Africa	3	2
+Basketo	Northeast Tropical Africa	2	2
+Yem	Northeast Tropical Africa	4	3
+Tigrinya	Northeast Tropical Africa	3	4
+Kafa	Northeast Tropical Africa	5	2
+Beta Israel	Northeast Tropical Africa	NA	4
+Ababda	Northern Africa	2	4
+Amarar	Northeast Tropical Africa	2	4
+Beni-Amer	Northeast Tropical Africa	3	4
+Blin	Northeast Tropical Africa	2	4
+Tigre	Northeast Tropical Africa	2	4
+Jimma	Northeast Tropical Africa	4	4
+Baditu	Northeast Tropical Africa	3	2
+Shako	Northeast Tropical Africa	3	2
+Bisharin	Northeast Tropical Africa	2	4
+Afar	Northeast Tropical Africa	3	4
+Amhara	Northeast Tropical Africa	4	4
+Gurage	Northeast Tropical Africa	1	2
+Goroa	East Tropical Africa	1	1
+Midobi	Northeast Tropical Africa	2	4
+Gimma	Northeast Tropical Africa	NA	4
+Habbaniya	Northeast Tropical Africa	NA	4
+Hemat	Northeast Tropical Africa	2	4
+Messiria Humr	Northeast Tropical Africa	4	4
+Shuwa	Northeast Tropical Africa	3	4
+Fur	Northeast Tropical Africa	4	4
+Kanembu	Northeast Tropical Africa	2	4
+Kanuri	West Tropical Africa	4	4
+Wolof	West Tropical Africa	3	4
+Zerma	West Tropical Africa	3	4
+Tukulor	West Tropical Africa	2	4
+Wodaabe Fulani	West Tropical Africa	2	4
+Tazarawa Hausa	West Tropical Africa	3	4
+Zazzagawa Hausa	West Tropical Africa	4	4
+Songhai	West Tropical Africa	4	4
+Hasania	Northeast Tropical Africa	NA	4
+Bolewa	West Tropical Africa	3	4
+Hausa Kanawa	West Tropical Africa	3	4
+Regeibat	West Tropical Africa	4	4
+Asben	West Tropical Africa	3	4
+Azjer	Northern Africa	3	4
+Ifora	West Tropical Africa	3	4
+Udalan Tuareg	West Tropical Africa	3	4
+Daza	Northeast Tropical Africa	1	4
+Chaambra	Northern Africa	3	4
+Delim	Northern Africa	4	4
+Kunta	West Tropical Africa	2	4
+Trarza	West Tropical Africa	4	4
+Teda	Northeast Tropical Africa	2	4
+Zenaga	West Tropical Africa	3	4
+Siwans	Northern Africa	2	4
+Mzab	Northern Africa	1	4
+Kel Antessar	West Tropical Africa	2	4
+Kababish	Northeast Tropical Africa	3	4
+Barabish	West Tropical Africa	2	4
+Tuareg Ahaggar	Northern Africa	3	4
+Barabra	Northern Africa	1	4
+Zekara	Northern Africa	3	4
+Algerians	Northern Africa	NA	4
+Hamama	Northern Africa	4	4
+Hamyan	Northern Africa	4	4
+Jebala	Northern Africa	3	4
+Moroccans	Northern Africa	5	4
+Nail	Northern Africa	2	4
+Saadi	Northern Africa	2	4
+Sahel	Northern Africa	4	4
+Egyptians	Northern Africa	4	4
+Sanusi	Northern Africa	4	4
+Tunisians	Northern Africa	5	4
+Riffians	Northern Africa	2	4
+Kabyle	Northern Africa	4	4
+Shluh	Northern Africa	2	4
+Ancient Egyptians	Northern Africa	5	1
+Beraber	Northern Africa	3	4
+Shawiya	Northern Africa	NA	4
+Tekna	Northern Africa	2	4
+Gheg	Southeastern Europe	3	4
+Ancient Romans	Southeastern Europe	5	1
+French Basques	Southwestern Europe	NA	4
+Neapolitans	Southeastern Europe	4	4
+Spaniards	Southwestern Europe	4	4
+Greeks	Southeastern Europe	4	4
+Spanish Basques	Southwestern Europe	4	4
+New Englanders	Northeastern U.S.A.	4	4
+Tristan da Cunha	Subantarctic Islands	1	4
+Brazilians	Brazil	5	4
+French Canadians	Eastern Canada	4	4
+Dutch	Middle Europe	4	4
+Icelanders	Northern Europe	3	4
+Irish	Northern Europe	3	4
+Sami	Northern Europe	1	4
+Walloons	Middle Europe	5	4
+Serbs	Southeastern Europe	4	4
+Russians	Eastern Europe	5	4
+Hutsuls	Eastern Europe	NA	4
+Czechs	Middle Europe	4	4
+Mari	Caucasus	2	4
+Bulgarians	Southeastern Europe	4	4
+Byelorussians	Eastern Europe	5	4
+Ukrainians	Eastern Europe	5	4
+Magyar	Middle Europe	4	4
+Lithuanians	Eastern Europe	4	4
+Armenians	Caucasus	4	4
+Kurd	Western Asia	3	4
+Abkhaz	Caucasus	2	4
+Kumyk	Caucasus	NA	4
+Cherkess	Caucasus	2	4
+Turks	Western Asia	4	4
+Ossetians	Caucasus	2	4
+Chechen	Caucasus	NA	4
+Georgians	Caucasus	3	4
+Svan	Caucasus	NA	4
+Syrians	Western Asia	3	4
+Madan	Western Asia	NA	4
+Rwala	Western Asia	2	4
+Hebrews	Western Asia	3	4
+Babylonians	Western Asia	4	1
+Mutair	Arabian Peninsula	2	4
+Jordanians	Western Asia	3	4
+Lebanese	Western Asia	4	4
+Druze	Western Asia	2	4
+Yemeni	Arabian Peninsula	4	4
+Sindhi	Indian Subcontinent	4	4
+Marri	Indian Subcontinent	3	4
+Ghilzai	Western Asia	4	4
+Qashqui	Western Asia	3	4
+Punjabi	Indian Subcontinent	5	4
+Yusufzai	Indian Subcontinent	3	4
+Hazara	Western Asia	2	4
+Kohistani	Indian Subcontinent	2	4
+Basseri	Western Asia	2	4
+Moghol	Western Asia	NA	4
+Bakhtiari	Western Asia	3	4
+Iranians	Western Asia	5	4
+Kazakh	Middle Asia	4	4
+Turkmen	Middle Asia	4	4
+Chahar	China	3	1
+Nivkh	Russian Far East	1	2
+Ob Ostyak	Siberia	1	4
+Yakut	Siberia	3	3
+Chukchi	Russian Far East	1	3
+Yurak-Samoyeds	Siberia	1	3
+Koryak	Russian Far East	1	3
+Ainu	Eastern Asia	2	1
+Koreans	China	3	1
+Chekiang	China	5	1
+Lolo	China	1	1
+Japanese	Eastern Asia	5	2
+Okinawans	Eastern Asia	3	1
+Minchia	China	2	1
+Li	China	3	1
+Adi	Indian Subcontinent	1	1
+Burusho	China	2	4
+Lepcha	China	2	3
+Central Tibetans	China	5	1
+Shina	Indian Subcontinent	3	1
+Sherpa	China	3	1
+Magar	Indian Subcontinent	4	1
+Santal	Indian Subcontinent	2	2
+Uttar Pradesh	Indian Subcontinent	5	2
+Bengali	Indian Subcontinent	5	1
+Bhil	Indian Subcontinent	2	3
+Pahari	Indian Subcontinent	5	1
+Kashmiri	Indian Subcontinent	4	4
+Gujarati	Indian Subcontinent	4	1
+Chenchu	Indian Subcontinent	1	1
+Telugu	Indian Subcontinent	4	1
+Muria Gond	Indian Subcontinent	NA	2
+Reddi	Indian Subcontinent	2	1
+Madia	Indian Subcontinent	2	3
+Toda	Indian Subcontinent	2	1
+Kodavas	Indian Subcontinent	3	1
+Hill Bhuiya	Indian Subcontinent	2	2
+Andamanese	Indo-China	1	1
+Tanala	Western Indian Ocean	2	2
+Vedda	Indian Subcontinent	1	1
+Antandroy	Western Indian Ocean	2	2
+Sakalava	Western Indian Ocean	4	2
+Garo	Indian Subcontinent	2	2
+Aimol	Indian Subcontinent	1	2
+Thado	Indian Subcontinent	2	2
+Angami	Indian Subcontinent	1	1
+Ao	Indian Subcontinent	1	3
+Sema	Indian Subcontinent	1	2
+Palaung	Indo-China	2	1
+Chin	Indo-China	2	1
+Lhota	Indian Subcontinent	1	1
+Burmese	Indo-China	4	1
+Maras	Indo-China	2	4
+Kachin	Indo-China	2	3
+Purum	Indian Subcontinent	1	1
+Karen	Indo-China	1	2
+Khasi	Indian Subcontinent	2	2
+Lamet	Indo-China	1	1
+Rade	Indo-China	1	1
+Cham	Indo-China	3	1
+Lawa	Indo-China	2	1
+Muong	Indo-China	3	1
+Senoi	Malesia	1	1
+Ancient Khmer	Indo-China	5	2
+Negri Sembilan	Indo-China	4	4
+Mnong Gar	Indo-China	1	1
+Semang	Malesia	1	3
+Annamese	Indo-China	5	1
+Khmer	Indo-China	4	1
+Akha	Indo-China	1	1
+Malays	Malesia	3	4
+Thai	Indo-China	5	2
+Atayal	Eastern Asia	2	1
+Bunun	Eastern Asia	1	2
+Sugbuanon	Malesia	5	4
+Kalinga	Malesia	2	2
+Sagada	Malesia	1	1
+Ifugao	Malesia	1	1
+Subanun	Malesia	1	1
+Paiwan	Eastern Asia	2	1
+Ami	Eastern Asia	1	1
+Iban	Malesia	1	1
+Javanese	Malesia	5	1
+Balinese	Malesia	4	1
+Toba Batak	Malesia	1	4
+Kadazan-Dusun	Malesia	1	2
+Minangkabau	Malesia	3	4
+Macassarese	Malesia	4	4
+Ambonese	Malesia	3	4
+Sumbawanese	Malesia	3	4
+Alorese	Malesia	3	2
+Northern Aranda	Australia	1	1
+Walbiri	Australia	1	1
+Gidjingali	Australia	1	1
+Yir Yoront	Australia	1	1
+Anindilyagwa	Australia	1	1
+Yolngu, Dhuwal	Australia	1	1
+Tiwi	Australia	1	2
+Diyari	Australia	2	1
+Murriny Patha	Australia	1	1
+Tasmanians (northwestern)	Australia	1	1
+Mee	Papuasia	2	2
+Motu	Papuasia	1	1
+Kakoli	Papuasia	1	2
+Kwoma	Papuasia	1	1
+Abelam	Papuasia	1	1
+Siane	Papuasia	1	1
+Marind-Amin	Papuasia	1	1
+Wantoat	Papuasia	1	1
+Koita	Papuasia	1	1
+Muju	Papuasia	1	1
+Mafulu	Papuasia	1	1
+Busama	Papuasia	1	1
+Manam	Papuasia	1	1
+Arapesh	Papuasia	1	1
+Fore	Papuasia	1	2
+Soromadja	Papuasia	1	2
+Dani	Papuasia	2	1
+Elema	Papuasia	1	1
+Wogeo	Papuasia	1	1
+Keraki	Papuasia	1	1
+Enga	Papuasia	1	1
+Orokaiva	Papuasia	1	1
+Palauans	Northwestern Pacific	3	1
+Kosraeans	Northwestern Pacific	3	2
+Makin	Southwestern Pacific	2	2
+Lamotrek	Northwestern Pacific	1	1
+Marshallese - Jaluit atoll	Northwestern Pacific	2	1
+Trukese	Northwestern Pacific	1	1
+Majuro	Northwestern Pacific	2	1
+Ifaluk	Northwestern Pacific	2	1
+Ponapeans	Northwestern Pacific	3	1
+Chamorro	Northwestern Pacific	2	4
+Siuai	Papuasia	1	1
+Usiai	Papuasia	1	1
+Rossel Islanders	Papuasia	1	2
+Choiseulese	Papuasia	1	1
+Dahuni	Papuasia	1	1
+Trobriands	Papuasia	2	1
+Kaoka	Papuasia	1	1
+Kurtatchi	Papuasia	1	1
+Lesu	Papuasia	1	1
+Ulawans	Papuasia	1	1
+Manus	Papuasia	1	1
+Mota	Southwestern Pacific	1	1
+Mbau Fijians	Southwestern Pacific	3	1
+Bunlap	Southwestern Pacific	1	1
+Lau	Southwestern Pacific	3	1
+Vanua Levu	Southwestern Pacific	2	1
+American Samoans	Southwestern Pacific	3	2
+Tongans	Southwestern Pacific	3	1
+Uveans	Southwestern Pacific	3	1
+Upolu Samoans	Southwestern Pacific	3	1
+Tikopia	Southwestern Pacific	2	1
+Pukapukans	Southwestern Pacific	2	2
+Ontong Java	Papuasia	1	1
+Kapingamarangi	Northwestern Pacific	2	1
+Futunans	Southwestern Pacific	2	1
+Niueans	Southwestern Pacific	2	1
+Mangaians	South-Central Pacific	2	1
+Māori	New Zealand	2	1
+Marquesans	South-Central Pacific	2	1
+Manihikians	Southwestern Pacific	2	1
+Hawaiians	North-Central Pacific	3	1
+Mangarevans	South-Central Pacific	3	1
+Tahitians	South-Central Pacific	3	1
+Easter Islanders	South-Central Pacific	2	1
+Nabesna	Subarctic America	1	1
+Chugach	Subarctic America	1	1
+Nunamiut	Subarctic America	1	1
+Nunatsiarmiut	Subarctic America	1	3
+Inughuit (Northern Greenland)	Subarctic America	1	1
+Délįne	Subarctic America	1	2
+DeneTha	Subarctic America	1	2
+Dakelh	Western Canada	1	3
+Tareumiut	Subarctic America	1	1
+Kutchin	Subarctic America	2	1
+Caribou Inuit	Subarctic America	1	1
+Iglulik Inuit	Subarctic America	1	1
+Tasiilaq	Subarctic America	1	1
+Kalaallit (West Greenland)	Subarctic America	1	4
+Dena'ina	Subarctic America	1	1
+Tahltan	Western Canada	1	2
+Sekani	Western Canada	1	4
+Beaver	Western Canada	1	1
+Copper Inuit	Subarctic America	1	1
+Dene	Subarctic America	1	1
+Eastern Cree	Eastern Canada	1	1
+Montagnais	Eastern Canada	1	1
+Northern Saulteaux	Western Canada	1	1
+Nipigon	Eastern Canada	1	2
+Minnesota Ojibwa	Western Canada	1	1
+Rainy River Ojibwe	Eastern Canada	1	1
+Katikitegon	North-Central U.S.A.	1	2
+Eastern Ojibwa	Northeastern U.S.A.	1	1
+Kaska	Western Canada	1	1
+Ottawa	Eastern Canada	2	2
+Mi'kmaq	Eastern Canada	2	2
+Potawatomi	Northeastern U.S.A.	2	2
+Netsilik	Subarctic America	1	1
+Naskapi	Eastern Canada	1	2
+Nunivak	Subarctic America	1	1
+Attawapiskat Cree	Eastern Canada	1	1
+Deg Xit'an	Subarctic America	1	2
+Aleut	Subarctic America	1	2
+Haida	Western Canada	1	1
+Alkatcho	Western Canada	1	1
+Nuu chah nulth	Western Canada	2	1
+Klahoose	Western Canada	1	1
+Squamish	Western Canada	1	1
+Comox	Western Canada	1	1
+Lummi	Western Canada	1	1
+Klallam	Northwestern U.S.A.	1	1
+Puyallup	Northwestern U.S.A.	1	1
+Quileute	Northwestern U.S.A.	1	1
+Twana	Northwestern U.S.A.	1	1
+Tillamook	Northwestern U.S.A.	1	1
+Tlingit	Subarctic America	1	1
+Heiltsuk	Western Canada	1	1
+Makah	Northwestern U.S.A.	1	1
+Quinault	Northwestern U.S.A.	1	1
+Cowichan	Western Canada	1	1
+Stó:lō	Western Canada	1	1
+Shasta	Southwestern U.S.A.	2	1
+Chimariko	Southwestern U.S.A.	1	1
+Karuk	Northwestern U.S.A.	1	1
+Hupa	Southwestern U.S.A.	1	1
+Wiyot	Southwestern U.S.A.	1	2
+Mattole-Bear River	Southwestern U.S.A.	1	1
+Sinkyone	Southwestern U.S.A.	1	3
+Yurok	Southwestern U.S.A.	1	1
+Eyak	Subarctic America	2	1
+Tolowa	Northwestern U.S.A.	1	1
+Tsimshian	Western Canada	2	1
+Haisla	Western Canada	1	1
+Nuxalk	Western Canada	1	2
+Nomlaki	Southwestern U.S.A.	1	2
+Maidu	Southwestern U.S.A.	2	2
+Nisenan	Southwestern U.S.A.	1	1
+Wintu	Southwestern U.S.A.	1	2
+Coast Yuki	Southwestern U.S.A.	1	2
+Huchnom	Southwestern U.S.A.	1	2
+Northern Pomo	Southwestern U.S.A.	1	1
+Eastern Pomo	Southwestern U.S.A.	1	2
+Tübalulabal	Southwestern U.S.A.	2	1
+Southern Valley Yokuts	Southwestern U.S.A.	1	1
+Tongva	Southwestern U.S.A.	1	2
+Northern Foothill Yokuts	Southwestern U.S.A.	1	1
+Serrano	Southwestern U.S.A.	1	2
+Cahuilla (Desert)	Southwestern U.S.A.	1	2
+Luiseño	Southwestern U.S.A.	1	1
+Kiliwa	Mexico	1	1
+Atsugewi	Southwestern U.S.A.	1	1
+Kumeyaay	Mexico	1	1
+Yuki	Southwestern U.S.A.	1	2
+Klamath	Northwestern U.S.A.	1	1
+Modoc	Northwestern U.S.A.	1	1
+Tenino	Northwestern U.S.A.	1	4
+Shuswap	Western Canada	2	1
+Bitterroot Salish	Northwestern U.S.A.	2	1
+Coeur d’Alene	Northwestern U.S.A.	2	1
+Sinkaitk	Western Canada	1	2
+Wishram	Northwestern U.S.A.	1	1
+Southern Ute	Northwestern U.S.A.	1	2
+Nez Perce	Northwestern U.S.A.	2	1
+Wadadokado	Northwestern U.S.A.	1	1
+Wadatkuht	Southwestern U.S.A.	1	1
+Kuyuidokado	Southwestern U.S.A.	1	1
+Havasupai	Southwestern U.S.A.	1	1
+Eastern Mono	Southwestern U.S.A.	1	2
+Sanpoil	Northwestern U.S.A.	1	3
+White Knife Shoshoni	Southwestern U.S.A.	1	2
+Hukundika	Northwestern U.S.A.	1	1
+Chemehuevi	Southwestern U.S.A.	1	1
+Washo	Southwestern U.S.A.	1	1
+Hualapai	Southwestern U.S.A.	1	1
+Yavapai	Southwestern U.S.A.	1	1
+Tolkepaya	Southwestern U.S.A.	1	1
+Kutenai	Western Canada	2	2
+Lillooet	Western Canada	1	1
+Gros Ventre	Northwestern U.S.A.	2	4
+Assiniboine	Northwestern U.S.A.	1	2
+Blackfoot	Western Canada	1	2
+Kainai	Western Canada	2	2
+Bungi	Western Canada	1	2
+Hidatsa	North-Central U.S.A.	1	2
+Piegan	Western Canada	2	2
+Plains Cree	North-Central U.S.A.	1	2
+Crow	Northwestern U.S.A.	2	1
+Cheyenne	Northwestern U.S.A.	2	1
+Teton	North-Central U.S.A.	2	2
+Arapaho	Northwestern U.S.A.	2	1
+Shawnee	Southeastern U.S.A.	2	4
+Omaha	North-Central U.S.A.	2	1
+Myaamia	Northeastern U.S.A.	2	3
+Wichita	South-Central U.S.A.	2	2
+Pawnee	North-Central U.S.A.	2	2
+Fox	North-Central U.S.A.	2	4
+Hasinai	South-Central U.S.A.	3	4
+Huron	Eastern Canada	2	2
+Seneca	Northeastern U.S.A.	3	2
+Muscogee	Southeastern U.S.A.	3	2
+Delaware	Northeastern U.S.A.	1	3
+Natchez	Southeastern U.S.A.	2	2
+Timucua	Southeastern U.S.A.	2	1
+Chiricahua	Mexico	1	1
+Isleta	South-Central U.S.A.	1	1
+San Ildefonso	South-Central U.S.A.	1	1
+Santa Ana	South-Central U.S.A.	1	1
+Jicarilla	South-Central U.S.A.	1	1
+Hopi	Southwestern U.S.A.	1	1
+Cocopa	Mexico	1	1
+Kamia	Southwestern U.S.A.	2	1
+Mojave	Southwestern U.S.A.	2	1
+Sia	South-Central U.S.A.	1	2
+Navajo	Southwestern U.S.A.	1	1
+Zuni	South-Central U.S.A.	1	1
+Maricopa	Southwestern U.S.A.	2	1
+Cochiti	South-Central U.S.A.	1	1
+Picuris	South-Central U.S.A.	1	1
+Tarahumara	Mexico	1	4
+Tohono O'odham	Mexico	1	4
+Chichimeca	Mexico	1	1
+Chinantec	Mexico	1	4
+Zapotec	Mexico	NA	4
+Aztec	Mexico	3	3
+Sierra Popoluca	Mexico	1	4
+Mixe	Mexico	2	4
+Tlaxcalans	Mexico	NA	4
+Guna	Central America	2	4
+Lacandon	Mexico	NA	2
+Lenca	Central America	1	4
+K'iche'	Central America	2	4
+Ch'orti'	Central America	2	2
+Emberá	Central America	1	2
+Bribri	Central America	1	3
+Garifuna	Central America	1	4
+Mam	Central America	NA	4
+Miskito	Central America	2	4
+Callinago	Caribbean	1	2
+Cágaba	Western South America	1	2
+Cariña	Northern South America	1	1
+Paraujano	Northern South America	1	2
+Wayuu	Western South America	1	3
+Yupa	Northern South America	1	2
+Taíno	Caribbean	3	2
+Haitians	Caribbean	4	4
+Warao	Northern South America	1	4
+Lokono	Northern South America	1	2
+Ndyuka	Northern South America	2	2
+Barama River Carib	Northern South America	1	2
+Guahibo	Western South America	1	1
+Yabarana	Northern South America	1	1
+Piaroa	Northern South America	1	1
+Munduruku	Brazil	1	1
+Tapirapé	Brazil	1	1
+Wai-wai	Brazil	1	1
+Sanema	Northern South America	1	1
+Yanomami	Northern South America	1	1
+Sirionó	Western South America	1	2
+Cocama	Western South America	1	2
+Ticuna	Western South America	1	2
+Shuar	Western South America	1	1
+Yagua	Western South America	1	1
+Cubeo	Western South America	1	1
+Witoto	Western South America	1	2
+Amahuaca	Brazil	1	1
+Shipibo-Conibo	Western South America	1	1
+Inca	Western South America	5	2
+Aymara	Western South America	NA	4
+Chachi	Western South America	1	1
+U'wa	Western South America	1	2
+Muisca	Western South America	3	1
+Asháninka	Western South America	1	2
+Yahgan	Southern South America	1	4
+Mapuche	Southern South America	1	3
+Ona	Southern South America	1	2
+Tehuelche	Southern South America	1	2
+Alacaluf	Southern South America	1	1
+Wichí	Southern South America	1	1
+Terena	Southern South America	1	2
+Abipón	Southern South America	1	1
+Choroti	Southern South America	1	1
+Chamacoco	Southern South America	2	3
+Toba	Southern South America	2	4
+Lengua	Southern South America	1	2
+Bororo	Brazil	2	1
+Kuikuru	Brazil	1	1
+Trumai	Brazil	1	1
+Bacairi	Brazil	1	1
+Nambikwara	Brazil	1	1
+Kamayurá	Brazil	1	2
+Paresi	Brazil	1	1
+Umotina	Brazil	1	1
+Carajá	Brazil	1	1
+Shavante	Brazil	1	1
+Sherente	Brazil	1	1
+Aweikoma	Brazil	1	1
+Canela	Brazil	1	1
+Tenetehara	Brazil	1	1
+Apinaye	Brazil	1	2
+Tupinambá	Brazil	2	2
+Bashkir	Eastern Europe	5	4
+Besermyan	Eastern Europe	5	4
+Chuvash	Eastern Europe	5	4
+Erzya Mordvins	Eastern Europe	5	4
+Estonians	Eastern Europe	5	4
+Gagauz	Eastern Europe	5	4
+Ingrians	Eastern Europe	5	4
+Karelians	Eastern Europe	5	4
+Kazan tatar	Eastern Europe	5	4
+Latvians	Eastern Europe	5	4
+Lithuanian Karaim	Eastern Europe	5	4
+Lithuanian Tatar	Eastern Europe	5	4
+Livs	Eastern Europe	5	4
+Moldovans	Eastern Europe	5	4
+Udmurt	Eastern Europe	5	4
+Veps	Eastern Europe	5	4
+Votes	Eastern Europe	5	4
+Nganasan	Siberia	1	2
+Itelmen	Russian Far East	1	2
+Ungazikmit	Russian Far East	1	2
+Mansi	Siberia	1	2
+Evenk	Siberia	1	2
+Negidal	Russian Far East	1	2
+Ulch	Russian Far East	1	2
+Orok	Russian Far East	1	2
+Oroch	Russian Far East	1	2
+Udihe	Russian Far East	1	2

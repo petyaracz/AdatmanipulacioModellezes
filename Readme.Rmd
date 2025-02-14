@@ -1,11 +1,39 @@
 ---
-title: "Haladó R óra"
-author: "Rácz, Péter"
+title: "R órák"
+author: "Rácz, Péter; Lukics, Kriszti"
 date: "`r Sys.Date()`"
 output: github_document
 ---
 
-# Sillabusz
+# Sillabusz: Kezdő R
+
+1. Bevezetés az adatkezelésbe
+  - select
+  - filter
+  - arrange
+  - mutate
+2. Bevezetés az adatvizualizációba
+  - ggplot
+  - aes
+  - geom
+3. Leíró statisztikák készítése
+  - group by
+  - mutate
+  - summarise
+4. Adatvizualizáció alapok
+  - faceting
+  - smooth
+  - legend
+  - axis
+5. Takaros adatok
+6. Széles és hosszú adatformátumok
+7. További adatformátumok
+8. Projektmunka
+9. Haladó adatvizualizáció
+10. Adatkommunikáció: RMarkdown
+
+
+# Sillabusz: Haladó R
 
 1. lineáris regresszió
   - elmélet

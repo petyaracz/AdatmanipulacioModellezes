@@ -1,39 +1,44 @@
-Kezdő R óra
+R órák
 ================
-Lukics, Kriszti; Rácz, Péter
+Rácz, Péter; Lukics, Kriszti
+2025-02-14
 
-# Sillabusz
+# Sillabusz: Kezdő R
 
-1. Bevezetés az adatkezelésbe
-  - select
-  - filter
-  - arrange
-  - mutate
-2. Bevezetés az adatvizualizációba
-  - ggplot
-  - aes
-  - geom
-3. Leíró statisztikák készítése
-  - group by
-  - mutate
-  - summarise
-4. Adatvizualizáció alapok
-  - faceting
-  - smooth
-  - legend
-  - axis
-5. Takaros adatok
-6. Széles és hosszú adatformátumok
-7. További adatformátumok
-8. Projektmunka
-9. Haladó adatvizualizáció
+1.  Bevezetés az adatkezelésbe
+
+- select
+- filter
+- arrange
+- mutate
+
+2.  Bevezetés az adatvizualizációba
+
+- ggplot
+- aes
+- geom
+
+3.  Leíró statisztikák készítése
+
+- group by
+- mutate
+- summarise
+
+4.  Adatvizualizáció alapok
+
+- faceting
+- smooth
+- legend
+- axis
+
+5.  Takaros adatok
+6.  Széles és hosszú adatformátumok
+7.  További adatformátumok
+8.  Projektmunka
+9.  Haladó adatvizualizáció
 10. Adatkommunikáció: RMarkdown
 
-Haladó R óra
-================
-Rácz, Péter
-
-# Sillabusz
+# Sillabusz: Haladó R
 
 1.  lineáris regresszió
 
@@ -180,9 +185,9 @@ curriculum to keep up with the latest technology trends and to provide
 the best learning experience for all skill levels. Join over 6 million
 learners around the world and close your skills gap.
 
-# Haladó Kisokos
+# Kisokos
 
-A haladó R órán tanultak, egy helyen.
+Az órán tanultak, egy helyen.
 
 ## 0. Milyen package-ekre (library-kre) lesz szükségünk?
 
