@@ -1,0 +1,429 @@
+pref_name_for_society	Long	Lat	region	moral_gods	social_complexity	subsistence
+Dorobo	36	0	East Tropical Africa	1	1	hunter-gatherer
+Mbuti	28	2	West-Central Tropical Africa	1	1	hunter-gatherer
+Sandawe	36	-5	East Tropical Africa	2	2	farmer
+Hadza	35	-3	East Tropical Africa	1	1	hunter-gatherer
+Suku	18	-6	West-Central Tropical Africa	2	4	farmer
+Lele	21	-5	West-Central Tropical Africa	1	2	farmer
+Buye	28	-7	West-Central Tropical Africa	2	3	farmer
+Kuba	22	-5	West-Central Tropical Africa	2	3	farmer
+Mambwe	32	9	Northeast Tropical Africa	2	2	farmer
+Bena	36	-9	East Tropical Africa	4	3	farmer
+Kiga	30	-3	West-Central Tropical Africa	2	1	farmer
+Luguru	38	-8	East Tropical Africa	2	1	farmer
+Safwa	33	-8	East Tropical Africa	2	2	farmer
+Fipa	31	-8	East Tropical Africa	2	3	farmer
+Nyoro	32	2	East Tropical Africa	2	4	farmer
+Nyamwezi	33	-5	East Tropical Africa	2	3	farmer
+Pimbwe	31	-7	East Tropical Africa	2	3	farmer
+Sukuma	34	-3	East Tropical Africa	2	3	farmer
+Zigula	38.79	-5.84	East Tropical Africa	2	1	farmer
+Hadimu	39.43	-6.07	East Tropical Africa	4	4	farmer
+Chagga	37	-3	East Tropical Africa	1	2	farmer
+Digo	39	-4	East Tropical Africa	4	2	farmer
+Giriama	40	-3	East Tropical Africa	1	4	farmer
+Kamba	38	-2	East Tropical Africa	2	2	farmer
+Kikuyu	37	-1	East Tropical Africa	3	1	farmer
+Haya	32	-1	East Tropical Africa	2	3	farmer
+Konjo	30	-1	East Tropical Africa	2	1	farmer
+Nyankole	31	0	East Tropical Africa	2	4	farmer
+Sumbwa	32	-4	East Tropical Africa	2	3	farmer
+Toro	31	1	East Tropical Africa	2	4	farmer
+Zinza	31	-3	East Tropical Africa	2	4	farmer
+Kaguru	37	-6	East Tropical Africa	2	2	farmer
+Ngulu	38	-6	East Tropical Africa	2	1	farmer
+Nyakyusa	34	-9	East Tropical Africa	2	3	farmer
+Ganda	32	1	East Tropical Africa	2	4	farmer
+Gisu	34	1	East Tropical Africa	2	2	farmer
+Amba	30	1	West-Central Tropical Africa	1	1	farmer
+Banyaruanda	30	-2	West-Central Tropical Africa	2	4	farmer
+Songola	26	-4	West-Central Tropical Africa	2	2	hunter-gatherer
+Duala	10	4	West-Central Tropical Africa	2	3	farmer
+Ha	30	-5	East Tropical Africa	2	3	farmer
+Rega	28	-3	West-Central Tropical Africa	2	2	farmer
+Songye	25	-6	West-Central Tropical Africa	2	1	farmer
+Kpe	9.27	4.22	West-Central Tropical Africa	2	1	farmer
+Fang	11	1	West-Central Tropical Africa	2	1	farmer
+Ngombe	20	2	West-Central Tropical Africa	1	2	farmer
+Nkundo	20	0	West-Central Tropical Africa	2	3	farmer
+Bamum	11	6	West-Central Tropical Africa	3	4	farmer
+Banen	11	5	West-Central Tropical Africa	2	1	farmer
+Nsaw	11	6	West-Central Tropical Africa	3	3	farmer
+Luba	26	-8	West-Central Tropical Africa	2	4	farmer
+Baboa	25	3	West-Central Tropical Africa	1	3	farmer
+Rundi	30	-3	West-Central Tropical Africa	2	4	farmer
+Fut	10	6	West-Central Tropical Africa	3	2	farmer
+Fon	2	7	West Tropical Africa	1	4	farmer
+Igbo	7	6	West Tropical Africa	2	2	farmer
+Toma	-9	11	West Tropical Africa	2	2	farmer
+Ebira	7	8	West Tropical Africa	2	2	farmer
+Sherbro	-12.69	7.52	West Tropical Africa	2	3	farmer
+Kpelle	-9	7	West Tropical Africa	2	2	farmer
+Efik	8	5	West Tropical Africa	2	2	farmer
+Ibibio	8	5	West Tropical Africa	2	2	farmer
+Itsekiri	5	6	West Tropical Africa	2	2	hunter-gatherer
+Afikpo	8	6	West Tropical Africa	1	2	farmer
+Edo	6	6	West Tropical Africa	2	4	farmer
+Isoko	6	5	West Tropical Africa	2	2	farmer
+Gbagyi	10	10	West Tropical Africa	3	2	farmer
+Ashanti	-2	7	West Tropical Africa	2	3	farmer
+Egba	3	7	West Tropical Africa	2	3	farmer
+Ekiti	5	8	West Tropical Africa	2	3	farmer
+Ife	5	7	West Tropical Africa	2	4	farmer
+Ewe	1	7	West Tropical Africa	2	3	farmer
+Yako	8	6	West Tropical Africa	1	1	farmer
+Fante	-1	6	West Tropical Africa	2	2	farmer
+Mende	-11	8	West Tropical Africa	2	2	farmer
+Gbande	-10	8	West Tropical Africa	2	2	farmer
+Ngere	-8	7	West Tropical Africa	2	2	farmer
+Temne	-12.64	8.46	West Tropical Africa	2	3	farmer
+Oyo Yoruba	4	8	West Tropical Africa	2	4	farmer
+Bete	-7	6	West Tropical Africa	1	1	farmer
+Nupe	6	9	West Tropical Africa	4	3	farmer
+Bambara	-7	13	West Tropical Africa	1	2	farmer
+Konkomba	0	10	West Tropical Africa	2	1	farmer
+Nankanse	-1	10	West Tropical Africa	2	1	farmer
+Mossi (Yatenga)	-2	13	West Tropical Africa	2	3	farmer
+Bassari	-13	12	West Tropical Africa	2	2	farmer
+Soninke	10	15	West Tropical Africa	4	3	farmer
+Diula	-4	9	West Tropical Africa	4	2	farmer
+Nononke	-4	14	West Tropical Africa	4	2	farmer
+Tallensi	-1	11	West Tropical Africa	1	1	farmer
+Kusasi	0	11	West Tropical Africa	2	1	farmer
+Mossi (Ouagadougou)	-2	12	West Tropical Africa	2	4	farmer
+Kabre	2	10	West Tropical Africa	2	1	farmer
+Birifor	-3	10	West Tropical Africa	2	1	farmer
+Moba	1	11	West Tropical Africa	2	2	farmer
+Tem	1	11	West Tropical Africa	2	3	farmer
+Bisa	0	12	West Tropical Africa	2	2	farmer
+Yalunka	-12	10	West Tropical Africa	4	2	farmer
+Bozo	-5	14	West Tropical Africa	4	2	hunter-gatherer
+Coniagui	-13	13	West Tropical Africa	2	2	farmer
+Katab	8	10	West Tropical Africa	3	1	farmer
+Chawai	9	10	West Tropical Africa	3	2	farmer
+Basa	8	8	West Tropical Africa	2	2	farmer
+Dakakari	5	12	West Tropical Africa	2	1	farmer
+Birom	9	10	West Tropical Africa	1	2	farmer
+Adara	8	10	West Tropical Africa	2	2	farmer
+Kagoro	8	10	West Tropical Africa	2	2	farmer
+Tiv	9	7	West Tropical Africa	1	2	farmer
+Gude	13	10	West Tropical Africa	2	1	farmer
+Kapsiki	14	11	West-Central Tropical Africa	2	2	farmer
+Podokwo	14	11	West-Central Tropical Africa	2	2	farmer
+Gure	8	10	West Tropical Africa	2	1	farmer
+Mafa	14	11	West-Central Tropical Africa	2	1	farmer
+Anaguta	9	10	West Tropical Africa	3	1	farmer
+Banda	22	7	West-Central Tropical Africa	2	1	farmer
+Mangbetu	28	3	West-Central Tropical Africa	2	3	farmer
+Fali	14	10	West-Central Tropical Africa	2	1	farmer
+Mbum	14	7	West-Central Tropical Africa	2	2	farmer
+Mundang	14	10	West-Central Tropical Africa	2	2	farmer
+Gisiga	14	10	West-Central Tropical Africa	2	2	farmer
+Kotoko	15	12	West-Central Tropical Africa	4	3	farmer
+Tupuri	15	10	West-Central Tropical Africa	3	1	farmer
+Bagirmi	17	11	Northeast Tropical Africa	4	4	farmer
+Bwaka	19	3	West-Central Tropical Africa	2	2	farmer
+Ngbandi	22	4	West-Central Tropical Africa	2	1	farmer
+Popoi	26	2	West-Central Tropical Africa	2	2	farmer
+Lendu	30	2	West-Central Tropical Africa	2	2	farmer
+Azande	27	5	West-Central Tropical Africa	3	3	farmer
+Lese	29	2	West-Central Tropical Africa	2	2	farmer
+Logo	30	3	West-Central Tropical Africa	2	2	farmer
+Lugbara	32	3	East Tropical Africa	2	2	farmer
+Madi	32	4	Northeast Tropical Africa	2	2	farmer
+Bongo	29	7	Northeast Tropical Africa	2	2	farmer
+Mao	35	9	Northeast Tropical Africa	2	2	farmer
+Mamvu	29	3	West-Central Tropical Africa	2	1	farmer
+Shilluk	32	10	Northeast Tropical Africa	2	2	farmer
+Gbaya	16	6	West-Central Tropical Africa	2	1	farmer
+Masa	16	10	Northeast Tropical Africa	2	1	farmer
+Teso	34	2	East Tropical Africa	2	2	farmer
+Acholi	32	3	East Tropical Africa	2	2	farmer
+Dinka	29	9	Northeast Tropical Africa	2	2	pastoralist
+Lotuko	33	4	Northeast Tropical Africa	3	2	farmer
+Pojulu	31	4	Northeast Tropical Africa	2	1	farmer
+Kakwa	31	4	Northeast Tropical Africa	2	2	farmer
+Kuku	32	4	Northeast Tropical Africa	2	2	farmer
+Alur	31	2	West-Central Tropical Africa	2	2	farmer
+Bodi	35	5	Northeast Tropical Africa	2	2	pastoralist
+Suri	35	6	Northeast Tropical Africa	2	2	farmer
+Jie	34	3	East Tropical Africa	3	2	farmer
+Plains Suk	36	1	East Tropical Africa	2	2	pastoralist
+Toposa	34	5	Northeast Tropical Africa	2	2	pastoralist
+Hill Suk	36	1	East Tropical Africa	2	2	farmer
+Nuer	32	8	Northeast Tropical Africa	4	1	pastoralist
+Lango	33	2	East Tropical Africa	3	1	farmer
+Turkana	35	4	East Tropical Africa	3	1	farmer
+Luo	34	-1	East Tropical Africa	2	2	farmer
+Bari	32	5	Northeast Tropical Africa	2	1	farmer
+Kipsigis	36	-1	East Tropical Africa	2	3	farmer
+Konso	37	6	Northeast Tropical Africa	2	1	farmer
+Somali (Esa)	43	10	Northeast Tropical Africa	4	4	pastoralist
+Arusi	40	8	Northeast Tropical Africa	2	3	pastoralist
+Gibe	37	8	Northeast Tropical Africa	4	4	farmer
+Sidama	38	7	Northeast Tropical Africa	2	2	farmer
+Arbore	37	5	Northeast Tropical Africa	2	2	farmer
+Banna	36	6	Northeast Tropical Africa	2	2	pastoralist
+Somali (Dolbahanta)	48	8	Northeast Tropical Africa	4	3	pastoralist
+Galab	36	5	Northeast Tropical Africa	2	2	pastoralist
+Hamar	36	5	Northeast Tropical Africa	2	2	pastoralist
+Bako	37	6	Northeast Tropical Africa	2	3	farmer
+Dime	36	6	Northeast Tropical Africa	2	2	farmer
+Shangama	37	6	Northeast Tropical Africa	1	2	farmer
+Ubamer	37	6	Northeast Tropical Africa	1	3	farmer
+Anfillo	35	9	Northeast Tropical Africa	2	3	farmer
+Basketo	37	6	Northeast Tropical Africa	2	2	farmer
+Yem	38	8	Northeast Tropical Africa	3	4	farmer
+Tigrinya	39	14	Northeast Tropical Africa	4	3	farmer
+Kafa	36	7	Northeast Tropical Africa	2	5	farmer
+Ababda	34	24	Northern Africa	4	2	pastoralist
+Amarar	36	20	Northeast Tropical Africa	4	2	pastoralist
+Beni-Amer	38	18	Northeast Tropical Africa	4	3	pastoralist
+Blin	36	16	Northeast Tropical Africa	4	2	pastoralist
+Tigre	39	17	Northeast Tropical Africa	4	2	pastoralist
+Jimma	37	8	Northeast Tropical Africa	4	4	farmer
+Baditu	38	6	Northeast Tropical Africa	2	3	farmer
+Shako	36	7	Northeast Tropical Africa	2	3	farmer
+Bisharin	35	20	Northeast Tropical Africa	4	2	pastoralist
+Afar	42	12	Northeast Tropical Africa	4	3	pastoralist
+Amhara	38	13	Northeast Tropical Africa	4	4	farmer
+Gurage	38	8	Northeast Tropical Africa	2	1	farmer
+Midobi	27	16	Northeast Tropical Africa	4	2	pastoralist
+Messiria Humr	28	11	Northeast Tropical Africa	4	4	pastoralist
+Shuwa	15	13	Northeast Tropical Africa	4	3	pastoralist
+Fur	24	12	Northeast Tropical Africa	4	4	farmer
+Kanembu	14	14	Northeast Tropical Africa	4	2	farmer
+Kanuri	13	12	West Tropical Africa	4	4	farmer
+Wolof	-17	15	West Tropical Africa	4	3	farmer
+Zerma	3	13	West Tropical Africa	4	3	farmer
+Tukulor	-14.32	14.73	West Tropical Africa	4	2	farmer
+Wodaabe Fulani	12	12	West Tropical Africa	4	2	pastoralist
+Tazarawa Hausa	8	14	West Tropical Africa	4	3	farmer
+Zazzagawa Hausa	8	11	West Tropical Africa	4	4	farmer
+Songhai	-1	17	West Tropical Africa	4	4	farmer
+Bolewa	11	11	West Tropical Africa	4	3	farmer
+Hausa Kanawa	9	12	West Tropical Africa	4	3	farmer
+Regeibat	-13	22	West Tropical Africa	4	4	pastoralist
+Asben	8	18	West Tropical Africa	4	3	pastoralist
+Azjer	10	25	Northern Africa	4	3	pastoralist
+Ifora	2	20	West Tropical Africa	4	3	pastoralist
+Udalan Tuareg	0	16	West Tropical Africa	4	3	farmer
+Chaambra	3	32	Northern Africa	4	3	pastoralist
+Delim	-15	22	Northern Africa	4	4	pastoralist
+Kunta	-1	19	West Tropical Africa	4	2	pastoralist
+Trarza	-15	18	West Tropical Africa	4	4	pastoralist
+Teda	17	21	Northeast Tropical Africa	4	2	farmer
+Zenaga	-8	18	West Tropical Africa	4	3	pastoralist
+Siwans	26	29	Northern Africa	4	2	farmer
+Mzab	4	33	Northern Africa	4	1	farmer
+Kel Antessar	-3	18	West Tropical Africa	4	2	pastoralist
+Kababish	31	17	Northeast Tropical Africa	4	3	pastoralist
+Barabish	-5	20	West Tropical Africa	4	2	pastoralist
+Tuareg Ahaggar	6	23	Northern Africa	4	3	pastoralist
+Barabra	33	23	Northern Africa	4	1	farmer
+Hamama	9	30	Northern Africa	4	4	pastoralist
+Hamyan	2	35	Northern Africa	4	4	pastoralist
+Jebala	-5	35	Northern Africa	4	3	farmer
+Moroccans	-8	33	Northern Africa	4	5	farmer
+Nail	5	35	Northern Africa	4	2	pastoralist
+Saadi	28	30	Northern Africa	4	2	pastoralist
+Sahel	10.94	35	Northern Africa	4	4	farmer
+Egyptians	33	25	Northern Africa	4	4	farmer
+Sanusi	22	31	Northern Africa	4	4	pastoralist
+Tunisians	10	37	Northern Africa	4	5	farmer
+Riffians	-4	35	Northern Africa	4	2	farmer
+Kabyle	4	36	Northern Africa	4	4	farmer
+Shluh	-9	30	Northern Africa	4	2	farmer
+Ancient Egyptians	31	30	Northern Africa	1	5	farmer
+Beraber	-7	33	Northern Africa	4	3	farmer
+Tekna	-11	28	Northern Africa	4	2	farmer
+Brazilians	-46.64	-23.68	Brazil	4	5	farmer
+Sindhi	68	25	Indian Subcontinent	4	4	farmer
+Marri	69	30	Indian Subcontinent	4	3	pastoralist
+Punjabi	73	32	Indian Subcontinent	4	5	farmer
+Yusufzai	72	35	Indian Subcontinent	4	3	farmer
+Adi	95	28	Indian Subcontinent	1	1	farmer
+Shina	73	35	Indian Subcontinent	1	3	farmer
+Magar	84	28	Indian Subcontinent	1	4	farmer
+Santal	87	24	Indian Subcontinent	2	2	farmer
+Uttar Pradesh	83	26	Indian Subcontinent	2	5	farmer
+Bengali	88	23	Indian Subcontinent	1	5	farmer
+Bhil	74	22	Indian Subcontinent	3	2	farmer
+Pahari	78	30	Indian Subcontinent	1	5	farmer
+Kashmiri	75	34	Indian Subcontinent	4	4	farmer
+Gujarati	77	20	Indian Subcontinent	1	4	farmer
+Chenchu	79	16	Indian Subcontinent	1	1	hunter-gatherer
+Telugu	79	18	Indian Subcontinent	1	4	farmer
+Reddi	82	18	Indian Subcontinent	1	2	farmer
+Madia	81	19	Indian Subcontinent	3	2	farmer
+Toda	77	12	Indian Subcontinent	1	2	pastoralist
+Kodavas	76	12	Indian Subcontinent	1	3	farmer
+Hill Bhuiya	85	21	Indian Subcontinent	2	2	farmer
+Vedda	81	8	Indian Subcontinent	1	1	hunter-gatherer
+Garo	91	26	Indian Subcontinent	2	2	farmer
+Aimol	94	25	Indian Subcontinent	2	1	farmer
+Thado	94	25	Indian Subcontinent	2	2	farmer
+Angami	94	26	Indian Subcontinent	1	1	farmer
+Ao	94	27	Indian Subcontinent	3	1	farmer
+Sema	95	26	Indian Subcontinent	2	1	farmer
+Lhota	94	27	Indian Subcontinent	1	1	farmer
+Purum	94	25	Indian Subcontinent	1	1	farmer
+Khasi	92	26	Indian Subcontinent	2	2	farmer
+Mee	136	-4	Papuasia	2	2	farmer
+Motu	147	-9	Papuasia	1	1	farmer
+Kakoli	144	-6	Papuasia	2	1	farmer
+Kwoma	142	-4	Papuasia	1	1	farmer
+Abelam	143.09	-3.79	Papuasia	1	1	farmer
+Siane	145	-6	Papuasia	1	1	farmer
+Marind-Amin	139	-8	Papuasia	1	1	farmer
+Wantoat	146.53	-6.15	Papuasia	1	1	farmer
+Koita	147	-9	Papuasia	1	1	farmer
+Muju	141	-6	Papuasia	1	1	farmer
+Mafulu	147	-8	Papuasia	1	1	farmer
+Busama	147.26	-6.69	Papuasia	1	1	farmer
+Manam	145.03	-4.08	Papuasia	1	1	farmer
+Arapesh	144	-4	Papuasia	1	1	farmer
+Fore	145	-6	Papuasia	2	1	farmer
+Soromadja	138	-2	Papuasia	2	1	hunter-gatherer
+Dani	139	-4	Papuasia	1	2	farmer
+Wogeo	144.1	-3.24	Papuasia	1	1	farmer
+Keraki	142	-9	Papuasia	1	1	farmer
+Enga	144	-6	Papuasia	1	1	farmer
+Orokaiva	148	-9	Papuasia	1	1	farmer
+Siuai	155	-6	Papuasia	1	1	farmer
+Usiai	147	-2	Papuasia	1	1	farmer
+Choiseulese	156.52	-6.69	Papuasia	1	1	farmer
+Dahuni	149.91	-10.41	Papuasia	1	1	farmer
+Trobriands	151.09	-8.43	Papuasia	1	2	farmer
+Kaoka	159.82	-9.49	Papuasia	1	1	farmer
+Kurtatchi	154.91	-5.6	Papuasia	1	1	farmer
+Ulawans	161.44	-9.63	Papuasia	1	1	farmer
+Manus	147	-2	Papuasia	1	1	hunter-gatherer
+Nabesna	-141	63	Subarctic America	1	1	hunter-gatherer
+Chugach	-146.49	60.72	Subarctic America	1	1	hunter-gatherer
+Nunamiut	-152	68	Subarctic America	1	1	hunter-gatherer
+Nunatsiarmiut	-64.63	65.24	Subarctic America	3	1	hunter-gatherer
+Inughuit (Northern Greenland)	-70	78	Subarctic America	1	1	hunter-gatherer
+Délįne	-119	65	Subarctic America	2	1	hunter-gatherer
+DeneTha	-120	61	Subarctic America	2	1	hunter-gatherer
+Tareumiut	-157	71	Subarctic America	1	1	hunter-gatherer
+Kutchin	-135	66	Subarctic America	1	2	hunter-gatherer
+Caribou Inuit	-96	63	Subarctic America	1	1	hunter-gatherer
+Tasiilaq	-37	66	Subarctic America	1	1	hunter-gatherer
+Kalaallit (West Greenland)	-51.22	68.66	Subarctic America	4	1	hunter-gatherer
+Dena'ina	-144	62	Subarctic America	1	1	hunter-gatherer
+Tahltan	-131	58	Western Canada	2	1	hunter-gatherer
+Sekani	-123	56	Western Canada	4	1	hunter-gatherer
+Beaver	-117	58	Western Canada	1	1	hunter-gatherer
+Copper Inuit	-110	69	Subarctic America	1	1	hunter-gatherer
+Dene	-105	60	Subarctic America	1	1	hunter-gatherer
+Minnesota Ojibwa	-96	49	Western Canada	1	1	hunter-gatherer
+Kaska	-128	59	Western Canada	1	1	hunter-gatherer
+Netsilik	-96	69	Subarctic America	1	1	hunter-gatherer
+Nunivak	-166	60	Subarctic America	1	1	hunter-gatherer
+Deg Xit'an	-160	62	Subarctic America	2	1	hunter-gatherer
+Aleut	-166.79	53.86	Subarctic America	2	1	hunter-gatherer
+Haida	-132	54	Western Canada	1	1	hunter-gatherer
+Alkatcho	-126	53	Western Canada	1	1	hunter-gatherer
+Nuu chah nulth	-125.85	49.16	Western Canada	1	2	hunter-gatherer
+Klahoose	-125	51	Western Canada	1	1	hunter-gatherer
+Squamish	-123	50	Western Canada	1	1	hunter-gatherer
+Comox	-124.97	49.72	Western Canada	1	1	hunter-gatherer
+Lummi	-123.27	48.84	Western Canada	1	1	hunter-gatherer
+Klallam	-123	48	Northwestern U.S.A.	1	1	hunter-gatherer
+Puyallup	-122	47	Northwestern U.S.A.	1	1	hunter-gatherer
+Quileute	-124.59	47.91	Northwestern U.S.A.	1	1	hunter-gatherer
+Twana	-123	48	Northwestern U.S.A.	1	1	hunter-gatherer
+Tillamook	-123.72	44.75	Northwestern U.S.A.	1	1	hunter-gatherer
+Tlingit	-133.92	58.12	Subarctic America	1	1	hunter-gatherer
+Heiltsuk	-128	52	Western Canada	1	1	hunter-gatherer
+Makah	-124.62	48.33	Northwestern U.S.A.	1	1	hunter-gatherer
+Quinault	-124.16	47.42	Northwestern U.S.A.	1	1	hunter-gatherer
+Cowichan	-122.73	49.01	Western Canada	1	1	hunter-gatherer
+Stó:lō	-122	49	Western Canada	1	1	hunter-gatherer
+Shasta	-122	41	Southwestern U.S.A.	1	2	hunter-gatherer
+Chimariko	-123	41	Southwestern U.S.A.	1	1	hunter-gatherer
+Karuk	-123	42	Northwestern U.S.A.	1	1	hunter-gatherer
+Hupa	-123	41	Southwestern U.S.A.	1	1	hunter-gatherer
+Wiyot	-123.55	39.81	Southwestern U.S.A.	2	1	hunter-gatherer
+Mattole-Bear River	-123.47	40.35	Southwestern U.S.A.	1	1	hunter-gatherer
+Sinkyone	-123.6	39.73	Southwestern U.S.A.	3	1	hunter-gatherer
+Yurok	-124	41	Southwestern U.S.A.	1	1	hunter-gatherer
+Eyak	-144.85	60.34	Subarctic America	1	2	hunter-gatherer
+Tsimshian	-130.25	54.64	Western Canada	1	2	hunter-gatherer
+Haisla	-129	54	Western Canada	1	1	hunter-gatherer
+Nuxalk	-127	52	Western Canada	2	1	hunter-gatherer
+Nomlaki	-122	39	Southwestern U.S.A.	2	1	hunter-gatherer
+Maidu	-121	40	Southwestern U.S.A.	2	2	hunter-gatherer
+Nisenan	-121	39	Southwestern U.S.A.	1	1	hunter-gatherer
+Wintu	-122	41	Southwestern U.S.A.	2	1	hunter-gatherer
+Huchnom	-123	39	Southwestern U.S.A.	2	1	hunter-gatherer
+Northern Pomo	-123	39	Southwestern U.S.A.	1	1	hunter-gatherer
+Eastern Pomo	-123	39	Southwestern U.S.A.	2	1	hunter-gatherer
+Tübalulabal	-118	39	Southwestern U.S.A.	1	2	hunter-gatherer
+Southern Valley Yokuts	-120	36	Southwestern U.S.A.	1	1	hunter-gatherer
+Northern Foothill Yokuts	-120	36	Southwestern U.S.A.	1	1	hunter-gatherer
+Serrano	-117	34	Southwestern U.S.A.	2	1	hunter-gatherer
+Cahuilla (Desert)	-116	33	Southwestern U.S.A.	2	1	hunter-gatherer
+Luiseño	-117	33	Southwestern U.S.A.	1	1	hunter-gatherer
+Atsugewi	-121	41	Southwestern U.S.A.	1	1	hunter-gatherer
+Yuki	-123	40	Southwestern U.S.A.	2	1	hunter-gatherer
+Klamath	-122	43	Northwestern U.S.A.	1	1	hunter-gatherer
+Modoc	-122	42	Northwestern U.S.A.	1	1	hunter-gatherer
+Tenino	-121	45	Northwestern U.S.A.	4	1	hunter-gatherer
+Shuswap	-120	51	Western Canada	1	2	hunter-gatherer
+Bitterroot Salish	-113	46	Northwestern U.S.A.	1	2	hunter-gatherer
+Coeur d’Alene	-117	48	Northwestern U.S.A.	1	2	hunter-gatherer
+Sinkaitk	-120	49	Western Canada	2	1	hunter-gatherer
+Wishram	-121	46	Northwestern U.S.A.	1	1	hunter-gatherer
+Southern Ute	-109	38	Northwestern U.S.A.	2	1	hunter-gatherer
+Nez Perce	-115	45	Northwestern U.S.A.	1	2	hunter-gatherer
+Wadadokado	-119	43	Northwestern U.S.A.	1	1	hunter-gatherer
+Wadatkuht	-120	41	Southwestern U.S.A.	1	1	hunter-gatherer
+Kuyuidokado	-119	40	Southwestern U.S.A.	1	1	hunter-gatherer
+Havasupai	-112	36	Southwestern U.S.A.	1	1	farmer
+Eastern Mono	-118	37	Southwestern U.S.A.	2	1	hunter-gatherer
+Sanpoil	-119	48	Northwestern U.S.A.	3	1	hunter-gatherer
+White Knife Shoshoni	-117	41	Southwestern U.S.A.	2	1	hunter-gatherer
+Hukundika	-112	42	Northwestern U.S.A.	1	1	hunter-gatherer
+Chemehuevi	-115	35	Southwestern U.S.A.	1	1	hunter-gatherer
+Washo	-120	39	Southwestern U.S.A.	1	1	hunter-gatherer
+Hualapai	-114	36	Southwestern U.S.A.	1	1	hunter-gatherer
+Yavapai	-112	35	Southwestern U.S.A.	1	1	hunter-gatherer
+Tolkepaya	-114	34	Southwestern U.S.A.	1	1	hunter-gatherer
+Kutenai	-117	50	Western Canada	2	2	hunter-gatherer
+Lillooet	-124.78	50.02	Western Canada	1	1	hunter-gatherer
+Gros Ventre	-108.98	48.78	Northwestern U.S.A.	4	2	hunter-gatherer
+Assiniboine	-106	48	Northwestern U.S.A.	2	1	hunter-gatherer
+Blackfoot	-112	51	Western Canada	2	1	hunter-gatherer
+Kainai	-115	51	Western Canada	2	2	hunter-gatherer
+Bungi	-100	51	Western Canada	2	1	hunter-gatherer
+Piegan	-115	49	Western Canada	2	2	hunter-gatherer
+Crow	-108	45	Northwestern U.S.A.	1	2	hunter-gatherer
+Cheyenne	-104	39	Northwestern U.S.A.	1	2	hunter-gatherer
+Arapaho	-103	40	Northwestern U.S.A.	1	2	hunter-gatherer
+Hopi	-111	36	Southwestern U.S.A.	1	1	farmer
+Kamia	-115	33	Southwestern U.S.A.	1	2	farmer
+Mojave	-114	35	Southwestern U.S.A.	1	2	farmer
+Navajo	-110	37	Southwestern U.S.A.	1	1	farmer
+Maricopa	-113	33	Southwestern U.S.A.	1	2	hunter-gatherer
+Munduruku	-58	-6	Brazil	1	1	farmer
+Tapirapé	-52	-11	Brazil	1	1	farmer
+Wai-wai	-59	1	Brazil	1	1	farmer
+Amahuaca	-72	-10	Brazil	1	1	farmer
+Bororo	-55	-16	Brazil	1	2	hunter-gatherer
+Kuikuru	-54	-13	Brazil	1	1	farmer
+Trumai	-53	-12	Brazil	1	1	farmer
+Bacairi	-55	-14	Brazil	1	1	farmer
+Nambikwara	-59	-12	Brazil	1	1	hunter-gatherer
+Kamayurá	-54	-12	Brazil	2	1	farmer
+Paresi	-58	-15	Brazil	1	1	farmer
+Umotina	-57	-15	Brazil	1	1	farmer
+Carajá	-50	-12	Brazil	1	1	hunter-gatherer
+Shavante	-52	-14	Brazil	1	1	hunter-gatherer
+Sherente	-48	-9	Brazil	1	1	farmer
+Aweikoma	-50	-28	Brazil	1	1	hunter-gatherer
+Canela	-45	-7	Brazil	1	1	farmer
+Tenetehara	-46	-3	Brazil	1	1	farmer
+Apinaye	-49	-6	Brazil	2	1	farmer
+Tupinambá	-35	-8	Brazil	2	2	farmer
