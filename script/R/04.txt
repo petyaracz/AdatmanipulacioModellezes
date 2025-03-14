@@ -1,0 +1,49 @@
+# https://github.com/mwaskom/seaborn-data/blob/master/tips.csv ?
+
+https://docs.google.com/spreadsheets/d/1tah_62dVRVipbA-IY4p_B_vnTkKZMxP98UxFAtJqd1M/edit?usp=sharing
+
+https://github.com/petyaracz/Racz2025Bible
+
+https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/refs/heads/main/dat/R/airbnb_cleaned_sample.csv
+
+Elmélet: group_by, mutate és summarise. across. rowwise. mutate soronként és több soron át.
+
+summarise
+
+- min, max, mean, median price
+- n listings
+- min, max, mean, median tavolsag belvarostol
+- ~ metroallomastol
+
+group_by
+
+- varos
+- bedroom,varos
+- weekday,bedroom,varos
+
+summarise es abrak
+
+- median price per varos x median tavolsag belvarostol per varos
+
+mutate egy ertek
+
+- min, max, mean, median price
+
+mutate soronkent
+
+- price / metro tav
+- price / varoskozpont tav
+
+group_by mutate
+
+- min, max, mean, median price
+- varos, bedroom, weekday
+
+egymasra epulo oszlopok
+
+- varosonkent median price - price
+- guest sat - varosonkent min guest satisfaction 
+
+mutate es abrak
+
+- varosonkent median price - price x guest sat - varosonkent min guest sat (a fenti sor)

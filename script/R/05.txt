@@ -1,0 +1,127 @@
+d = read_tsv("https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/refs/heads/main/dat/R/olympics_summer.tsv")
+
+## Spanyolorszag az olimpiakon
+
+### count
+
+d |> 
+  filter(NOC == 'ESP') |> 
+  count(Games,City,Year)
+
+### arrange
+
+d |> 
+  filter(NOC == 'ESP') |> 
+  count(Games,City,Year) |>
+  arrange(n)
+
+### egnarra
+
+d |> 
+  filter(NOC == 'ESP') |> 
+  count(Games,City,Year) |>
+  arrange(-n)
+
+### bar plot
+
+# attempt 1
+d |> 
+  filter(NOC == 'ESP') |> 
+  ggplot(aes(Games, fill = Medal)) +
+  geom_bar()
+
+# attempt 2
+d |> 
+  filter(NOC == 'ESP') |> 
+  ggplot(aes(Games, fill = Medal)) +
+  geom_bar() +
+  coord_flip()
+
+# attempt 3
+d |> 
+  filter(NOC == 'ESP') |> 
+  ggplot(aes(Games, fill = Medal)) +
+  geom_bar(position = position_dodge()) +
+  coord_flip()
+
+# attempt 4
+d |> 
+  mutate(Medal = fct_relevel(Medal, 'Gold', 'Silver')) |> 
+  filter(NOC == 'ESP') |> 
+  ggplot(aes(Games, fill = Medal)) +
+  geom_bar(position = position_dodge()) +
+  coord_flip()
+
+d = d |> 
+  mutate(Medal = fct_relevel(Medal, 'Gold', 'Silver'))
+
+# attempt 5
+d |> 
+  mutate(Medal = fct_relevel(Medal, 'Gold', 'Silver')) |> 
+  filter(NOC == 'ESP') |> 
+  ggplot(aes(Games, fill = Medal)) +
+  geom_bar(position = position_dodge()) +
+  coord_flip() +
+  scale_fill_manual(values = c('gold', 'grey', 'brown'))
+
+# attempt 6
+d |> 
+  filter(NOC == 'ESP') |> 
+  ggplot(aes(Games, fill = Medal)) +
+  geom_bar(position = position_dodge()) +
+  coord_flip() +
+  scale_fill_manual(values = c('gold', 'grey', 'brown')) +
+  theme_minimal()
+
+# attempt 6
+d |> 
+  filter(NOC == 'ESP') |> 
+  ggplot(aes(fct_infreq(Games), fill = Medal)) +
+  geom_bar(position = position_dodge()) +
+  coord_flip() +
+  scale_fill_manual(values = c('gold', 'grey', 'brown')) +
+  theme_minimal()
+
+### line plot
+
+# attempt 0
+d |> 
+  filter(NOC == 'ESP') |> 
+  count(Games,City,Year) |> 
+  ggplot(aes(Year,n)) +
+  geom_col()
+
+# attempt 1
+d |> 
+  filter(NOC == 'ESP') |> 
+  count(Games,City,Year) |> 
+  ggplot(aes(Year,n)) +
+  geom_line()
+
+# attempt 2
+d |> 
+  filter(NOC == 'ESP') |> 
+  count(Games,City,Year,Medal) |> 
+  ggplot(aes(Year,n)) +
+  geom_line()
+
+# attempt 3
+d |> 
+  filter(NOC == 'ESP') |> 
+  count(Games,City,Year,Medal) |> 
+  ggplot(aes(Year,n,colour = Medal)) +
+  geom_line() +
+  scale_fill_manual(values = c('gold', 'grey', 'brown'))
+
+# attempt 4
+d |> 
+  filter(NOC == 'ESP') |> 
+  count(Games,City,Year,Medal) |> 
+  ggplot(aes(Year,n,colour = Medal)) +
+  geom_line() +
+  scale_colour_manual(values = c('gold', 'grey', 'brown')) +
+  theme_bw()
+
+# harom legsikeresebb csapat a modern olimpiak torteneteben
+# a legsikeresebb csapat legsikeresebb sportagai
+# hogyan valtoztak a harom legsikeresebb sportagban az eredmenyek az evek soran

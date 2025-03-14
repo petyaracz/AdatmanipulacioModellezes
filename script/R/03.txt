@@ -1,0 +1,52 @@
+Airbnb data
+
+tidyverse library
+
+https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/refs/heads/main/dat/R/airbnb_cleaned_sample.csv   
+
+histogram
+
+- price
++ log price
+
+barplot
+
+- listingek szama varosonkent
++ listingek szama superhostonkent
+
+fill barplot
+
+- listingek szama per varos
+- ~ es szuperhoszt
++ listingek szama per varos es bedroom
++ egymas mellett, nem egymason
+
+bokszplot
+
+- log price x varos
+- log price x varos x day
++ log price x varos x bedrooms
++ log price x superhost x bedrooms
+
+scatter plot
+
+- log price x metro
+- log price x log metro
++ log price x log city centre
+- log price x log city centre x city
++ log price x log metro x city
+- log price x log city centre x superhost
+- log price x log city centre x superhost & smooth alpha!
+- log price x log city centre x city 
+	& smooth alpha!
+	& faceting
++ log price x log metro x city & smooth
+
+violin plot
+
+- price x city
+- guest satisfaction x superhost
+
+faceting
+
+- log price x 

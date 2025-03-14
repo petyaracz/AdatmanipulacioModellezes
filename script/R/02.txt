@@ -1,0 +1,78 @@
+Disney titles data
+
+Elmélet: R. adatmanipuláció. funkcionális programozás. adattábla és függvények. kiírás konzolba / elmentés új változóba
+
+    R als Rechner
+
+        - egysoros keplet
+            2 + 3
+        - tobbsoros keplet
+            2 +
+            3
+        - tobbsoros keplet de
+            2
+            + 3
+        - tobbsoros keplet, zarojelek
+            2 +
+            (3 - 5)
+        - tobbsoros keplet, zarojelek, de
+            2 +
+            (
+                3 
+                - 5
+            )
+        - indent mindegy
+
+    copilot framing
+
+        R select title, imdb score in data 
+
+    https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/refs/heads/main/dat/R/disney_titles_transformed.csv
+
+    dplyr Select
+        - cím, imdb pontszám
+        - cím, gyártó ország
+        + cím, megjelenés éve
+        - cím, imdb dolgok
+        + cím, műfajok
+        + cím, y-ra végződő oszlopok
+
+    dplyr Filter
+        - csak filmek
+        - 1990-ben megjelent filmek
+        + 1940-ben megjelent filmek
+        + 1940 után megjelent filmek
+        + 1940 előtt megjelent filmek
+        + 1940 után, 1995 előtt megjelent filmek
+        - animációs filmek
+        + G kategóriába sorolt és 90 percnél hosszabb filmek
+        - 1940 előtt, VAGY 1995 után megjelent filmek
+        + 1940-ben megjelent vagy 8,0-nál nagyobb IMDb-pontszámmal rendelkező filmek
+        - az 1950 előtt megjelent és (fantasy vagy 7-nél nagyobb IMDB pontszámmal rendelkező) filmek
+        + 1930 és 1950 között megjelent címek
+        - családi animációk
+        + horror animációk
+        - NA imdb
+        + 120 percnél rövidebb, 1930 után jelent meg, és legalább két megadott műfajhoz tartoznik az animation, family, „music, „fantasy” közül
+
+    dplyr Arrange
+
+        - megj. éve
+        + imdb score
+        - fordított imdb score
+        + kategória
+
+    dplyr Mutate
+
+        - perc -> óra
+        - horror + animáció -> horror animáció
+        + "1940 után jelent meg"
+        + G kategóriába sorolt és 90 percnél hosszabb filmek
+        + 1940-ben megjelent vagy 8,0-nál nagyobb IMDb-pontszámmal rendelkező filmek
+
+    Mutate + filter
+
+        - 1940-ben megjelent vagy 8,0-nál nagyobb IMDb-pontszámmal rendelkező filmek ->
+        - filter erre
+        + G kategóriába sorolt és 90 percnél hosszabb filmek ->
+        + filter arra, hogy ezek közül family
