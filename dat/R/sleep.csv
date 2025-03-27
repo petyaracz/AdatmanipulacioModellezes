@@ -1,4 +1,4 @@
-participant,morning_before,evening_before,morning_after,evening_after
+participant,morning_wm,evening_wm,morning_stroop,evening_stroop
 P1,75,75.8,64.6,63.9
 P2,80.7,79.7,58,59.3
 P3,79.9,74.8,61.2,57.5
