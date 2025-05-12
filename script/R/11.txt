@@ -1,0 +1,35 @@
+ADATOK:
+https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/refs/heads/main/dat/R/wls_bl_14_03.csv
+
+FORRÁS:
+https://wls.wisc.edu/
+
+VÁLTOZÓK:
+id: azonosító
+sex: nem
+grad_mrst: családi állapot a diplomázás idején
+ret_mrst: családi állapot a nyugdíjaskor idején
+ret_drink_guilt: alkoholfogyasztással kapcsolatos bűntudat a nyugdíjazás idején
+ret_depression: depresszió a nyugdíjazás idején
+ret_number_series: McArdle & Woodcock Number Series Task kognitív feladat eredmény a nyugdíjazás idején
+ret_num_child: gyerekek száma a nyugdíjazás idején
+grad_IQ: IQ pontszám a diplomázás idején
+grad_income: bevétel a diplomázás idején
+twin: iker státusz
+
+FELADATOK:
+- adatvizualizáció, legyen három adatelemzés vizualizációja:
+    - kategorikus x kategorikus
+    - kategorikus x folytonos
+    - folytonos x folytonos
+- legyen egy jelentés, benne a következő szöveges formátumok:
+    - háromszintű tagolás (fejezetcímek)
+    - dőlt, félkövér, aláhúzott formázás
+    - számozott és nem számozott lista
+    - táblázat
+    - kép linkelve
+    - hiperlink
+    - inline kód
+    - számozott és nem számozott lista
+    - sortörés (és oldaltörés, ha kell)
+- legyen .html, .pdf és .docx formátumban exportálva
