@@ -15,12 +15,12 @@ library(performance) # !
 
 # -- read -- #
 
-d0 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l3d0.tsv')
-d1 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l3d1.tsv')
-d2 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l3d2.tsv')
-d3 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l3d3.tsv')
-d4 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l3d4.tsv')
-d5 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l3d5.tsv')
+d0 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l3d0.tsv')
+d1 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l3d1.tsv')
+d2 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l3d2.tsv')
+d3 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l3d3.tsv')
+d4 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l3d4.tsv')
+d5 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l3d5.tsv')
 
 # -- fun -- #
 

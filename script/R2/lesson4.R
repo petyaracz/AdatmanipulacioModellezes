@@ -111,7 +111,7 @@ plogis(a2+b2)
 
 # not school
 
-d3 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l4d1.tsv')
+d3 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l4d1.tsv')
 
 ggplot(d3, aes(lfpm10r,as.double(correct))) +
   geom_point() +
@@ -121,7 +121,7 @@ ggplot(d3, aes(lfpm10r,as.double(correct))) +
 fit3 = glm(correct ~ lfpm10r, data = d3, family = binomial(link = 'logit'))
 tidy(fit3, conf.int = T)
 
-d4 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l4d2.tsv')
+d4 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l4d2.tsv')
 
 fit4 = glm(cbind(`TRUE`,`FALSE`) ~ lfpm10r, data = d4, family = binomial(link = 'logit'))
 tidy(fit4)

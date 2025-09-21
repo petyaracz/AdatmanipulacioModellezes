@@ -6,9 +6,9 @@ library(performance)
 
 # -- read -- #
 
-d4 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l5d4.tsv')
-d5 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l5d5.tsv')
-housing = read_csv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/Housing.csv') 
+d4 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l5d4.tsv')
+d5 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l5d5.tsv')
+housing = read_csv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/Housing.csv') 
 
 # -- main -- #
 

@@ -4,7 +4,7 @@ library(performance)
 library(sjPlot)
 library(lme4)
 
-d = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l10d1.tsv')
+d = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l10d1.tsv')
 
 # structure of d
 d

@@ -24,7 +24,7 @@ OLS = function(x, y) {
 
 # -- en -- #
 
-d = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l1d1.tsv')
+d = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l1d1.tsv')
 d
 d %>% 
   ggplot(aes(x,y)) +
@@ -73,3 +73,6 @@ estimate/std_error
 # -- ti -- #
 
 
+d2 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l1d2.tsv')
+d3 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l1d3.tsv')
+d4 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l1d4.tsv')

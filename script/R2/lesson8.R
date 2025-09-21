@@ -5,7 +5,7 @@ library(performance)
 library(sjPlot)
 library(psych)
 
-d = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/lesson8.tsv')
+d = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/lesson8.tsv')
 d2 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/refs/heads/main/dat/credit_risk.tsv')
 
 # use pairs.panel to look at data

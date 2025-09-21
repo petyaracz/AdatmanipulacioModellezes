@@ -18,7 +18,7 @@ tidy3 = compose(kable2, tidy2)
 
 # -- read -- #
 
-d = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/lesson9.tsv')
+d = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/lesson9.tsv')
 
 # -- scale -- #
 

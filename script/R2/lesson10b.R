@@ -14,8 +14,8 @@ tidy2 = partial(tidy, conf.int = T)
 
 # -- read -- #
 
-d1 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/anthropology1.tsv')
-d2 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/anthropology2.tsv')
+d1 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/anthropology1.tsv')
+d2 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/anthropology2.tsv')
 
 # -- gods -- #
 

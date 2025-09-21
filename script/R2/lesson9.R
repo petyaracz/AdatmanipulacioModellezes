@@ -20,8 +20,8 @@ library(psych)
 library(janitor)
 library(lme4)
 
-# load table from 'https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/lesson9.tsv' and assign to d
-d <- read_tsv("https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/lesson9.tsv")
+# load table from 'https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/lesson9.tsv' and assign to d
+d <- read_tsv("https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/lesson9.tsv")
 
 d %>% View
 

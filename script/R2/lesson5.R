@@ -10,7 +10,7 @@ library(sjPlot)
 # 1. factor
 
 # read in dat/l5d1.tsv
-d1 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l5d1.tsv')
+d1 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l5d1.tsv')
 
 # what is x? what is y?
 lm1 = lm(wage ~ gender, data = d1)
@@ -39,7 +39,7 @@ d2b = d2 %>%
   )
 
 # 3. factor 3
-d3 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l5d3.tsv')
+d3 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l5d3.tsv')
 
 # what is x? what is y?
 lm3 = lm(maths ~ high_school, data = d3)
@@ -76,7 +76,7 @@ summary(lm3b)
 # plot y ~ x
 # fit a linear model
 # what is a (the intercept)? what are b? what are their confidence intervals?
-d4 = read_tsv('https://raw.githubusercontent.com/petyaracz/class_advanced_r/main/dat/l5d4.tsv')
+d4 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l5d4.tsv')
 
 # what is x? what is y?
 lm4 = lm(wage ~ gender + edu, data = d4)
