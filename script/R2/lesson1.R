@@ -26,7 +26,7 @@ OLS = function(x, y) {
 
 d = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l1d1.tsv')
 d
-d %>% 
+d |> 
   ggplot(aes(x,y)) +
   geom_point() +
   theme_few() +
@@ -47,13 +47,13 @@ OLS(d$x,d$y)
 
 d$pred = predict(lm)
 
-d %>% 
+d |> 
   ggplot(aes(x,pred)) +
   geom_point() +
   theme_few()
 
-d %>% 
-  mutate(id = 1:n()) %>% 
+d |> 
+  mutate(id = 1:n()) |> 
   ggplot(aes(x,y)) +
   geom_point() +
   # geom_smooth(method = 'lm', se = F) +
@@ -62,11 +62,11 @@ d %>%
   geom_linerange(aes(x = x, ymin = y, ymax = pred, group = id), colour = 'red') +
   coord_cartesian(ylim = c(-100,100),)
 
-estimate = tidy(lm) %>% 
-  filter(term == 'x') %>% 
+estimate = tidy(lm) |> 
+  filter(term == 'x') |> 
   pull(estimate)
-std_error = tidy(lm) %>% 
-  filter(term == 'x') %>% 
+std_error = tidy(lm) |> 
+  filter(term == 'x') |> 
   pull(std.error)
 estimate/std_error
 

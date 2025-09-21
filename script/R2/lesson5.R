@@ -33,7 +33,7 @@ plot(check_model(lm1, panel = F))
 # what is a (the intercept)? what is b? what are their confidence intervals?
 
 # factor levels:
-d2b = d2 %>% 
+d2b = d2 |> 
   mutate(
     nem2 = fct_relevel(nem, 'nő')
   )
@@ -55,11 +55,11 @@ d3 |>
 # fit a linear model
 # what is a (the intercept)? what are b? what are their confidence intervals?
 
-d3b = d3 %>% 
+d3b = d3 |> 
   mutate(
     high_school2 = fct_reorder(high_school, maths)
   )
-d3c = d3 %>% 
+d3c = d3 |> 
   mutate(
     high_school3 = fct_reorder(high_school, -maths)
   )

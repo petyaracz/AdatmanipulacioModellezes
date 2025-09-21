@@ -9,7 +9,7 @@ d = read_tsv("https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModelle
 d
 
 # drop NA
-d = d %>% drop_na()
+d = d |> drop_na()
 
 # boxplot rt ~ stimulus_congruent
 ggplot(d, aes(x = stimulus_congruent, y = rt)) +

@@ -24,40 +24,40 @@ glimpse(d)
 range(d$ymd)
 
 # correlations
-d %>% 
-  select(apparent_temperature,temperature) %>% 
+d |> 
+  select(apparent_temperature,temperature) |> 
   pairs.panels( 
              method = "pearson", # correlation method
              density = TRUE,  # show density plots
              lm = T
   )
 # + humidity
-d %>% 
-  select(apparent_temperature,temperature,humidity) %>% 
+d |> 
+  select(apparent_temperature,temperature,humidity) |> 
   pairs.panels( 
              method = "pearson", # correlation method
              density = TRUE,  # show density plots
              lm = T
 )
 # + wind speed
-d %>% 
-  select(apparent_temperature,temperature,humidity,wind_speed) %>% 
+d |> 
+  select(apparent_temperature,temperature,humidity,wind_speed) |> 
   pairs.panels( 
     method = "pearson", # correlation method
     density = TRUE,  # show density plots
     lm = T
   )
 # + pressure
-d %>% 
-  select(apparent_temperature,temperature,humidity,wind_speed,pressure) %>% 
+d |> 
+  select(apparent_temperature,temperature,humidity,wind_speed,pressure) |> 
   pairs.panels( 
     method = "pearson", # correlation method
     density = TRUE,  # show density plots
     lm = T
   )
 # + date
-d %>% 
-  select(apparent_temperature,temperature,humidity,wind_speed,pressure,ymd) %>% 
+d |> 
+  select(apparent_temperature,temperature,humidity,wind_speed,pressure,ymd) |> 
   pairs.panels( 
     method = "pearson", # correlation method
     density = TRUE,  # show density plots

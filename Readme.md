@@ -66,6 +66,7 @@ Rácz, Péter; Lukics, Kriszti
 
 - elmélet:
   - predikció és extrapoláció
+  - a konfidencia-intervallum
 - gyakorlat
   - `summary()`
   - `glance()`
@@ -420,7 +421,7 @@ Vesd össze:
 
 ``` r
 clm = lm(Sepal.Width ~ Species, data = iris)
-tidy(clm) %>% 
+tidy(clm) |> 
   knitr::kable('simple', digits = 2)
 ```
 
@@ -485,7 +486,7 @@ annak kevés köze van a valósághoz. Az interakcióról nem is beszélve.
 Hasonlítsuk össze az lm1-lmm1-lmm2-t.
 
 ``` r
-compare_performance(lm1, lmm1, lmm2) %>% 
+compare_performance(lm1, lmm1, lmm2) |> 
   knitr::kable('simple', digits = 2)
 ```
 
@@ -515,7 +516,7 @@ Biztonság kedvéért hasonlítsuk össze csupán a két hierarchikus modellt
 egymással.
 
 ``` r
-compare_performance(lmm1, lmm2) %>% 
+compare_performance(lmm1, lmm2) |> 
   knitr::kable('simple', digits = 2)
 ```
 
@@ -542,7 +543,7 @@ azoknak a mérőszámoknak az alapján, amelyke a komplexitást büntetik
 melyik modell illeszkedik jobban az adatokra:
 
 ``` r
-test_likelihoodratio(lmm1,lmm2) %>% 
+test_likelihoodratio(lmm1,lmm2) |> 
   knitr::kable('simple', digits = 2)
 ```
 
@@ -562,7 +563,7 @@ Vesd össze: ugyanez a teszt azt mondja, hogy az lmm1 jobb, mint az lm1,
 hiába sokkal bonyibb.
 
 ``` r
-test_likelihoodratio(lm1,lmm1) %>% 
+test_likelihoodratio(lm1,lmm1) |> 
   knitr::kable('simple', digits = 2)
 ```
 
@@ -614,7 +615,7 @@ jó, csak nehéz berakni mondjuk egy táblázatba.
 A tidy függvény kevesebb információt közöl, de takarosabb.
 
 ``` r
-tidy(lmm1, conf.int = T) %>% 
+tidy(lmm1, conf.int = T) |> 
   knitr::kable('simple', digits = 2)
 ```
 

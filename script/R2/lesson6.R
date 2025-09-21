@@ -22,7 +22,7 @@ library(sjPlot)
 
 # factor + numeric
 
-d4 %>% 
+d4 |> 
   ggplot(aes(wage, edu, colour = gender)) +
   geom_point() +
   geom_smooth(method = lm) +

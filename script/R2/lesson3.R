@@ -26,7 +26,7 @@ d5 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModell
 
 # take data, columns x, y, plot x against y, draw lm
 plotData = function(dat,x,y){
-  dat %>% 
+  dat |> 
     ggplot(aes({{x}},{{y}})) + # data masking: {{}} tells the function to look for the names x and y in dat
     geom_point() +
     geom_smooth(method = lm) +
@@ -80,7 +80,7 @@ ggplot(d1, aes(height_father,height_son,colour = orig_father)) +
   theme_bw()
 
 # let's keep one type of dad
-d1ind = d1 %>% 
+d1ind = d1 |> 
   filter(orig_father == 'ind')
 
 lm1_ind = lm(height_son ~ height_father, data = d1ind)
@@ -129,7 +129,7 @@ check_model(lm4)
 # top/bottom x observation
 
 # create d4l, which is d4 with...
-d4l = d4 %>% 
+d4l = d4 |> 
   mutate( # added columns
     median_sqm = median(sqm), # median of sqm
     mad_sqm = mad(sqm), # mean absolute deviation of sqm
@@ -146,13 +146,13 @@ d4l = d4 %>%
 d4l
 
 # what did we exclude?
-d4l %>% 
+d4l |> 
   ggplot(aes(sqm,price,colour = keep)) +
   geom_point() +
   theme_bw()
 
 # only keep unruly observations
-d4r = d4l %>% 
+d4r = d4l |> 
   filter(keep)
 
 # try again

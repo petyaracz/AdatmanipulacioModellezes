@@ -301,7 +301,7 @@ Vesd össze:
 
 ```{r collinearity}
 clm = lm(Sepal.Width ~ Species, data = iris)
-tidy(clm) %>% 
+tidy(clm) |> 
   knitr::kable('simple', digits = 2)
 ```
 
@@ -334,7 +334,7 @@ __Melyik modell a jobb?__
 Tudjuk, hogy az lm1 eleve aggályos, mert hülyén néznek ki a maradékok, az lm2 és az lm3 pedig konkrétan teljesen vállalhatatlanok, mert olyan kollineáris a két prediktor, hogy valószínűleg értelmezhetetlenek az estimate-ek: a modell hősiesen kiszámolt valamit, de amit kiszámolt, annak kevés köze van a valósághoz. Az interakcióról nem is beszélve. Hasonlítsuk össze az lm1-lmm1-lmm2-t.
 
 ```{r lm_compare, fig.width = 4, fig.height = 3}
-compare_performance(lm1, lmm1, lmm2) %>% 
+compare_performance(lm1, lmm1, lmm2) |> 
   knitr::kable('simple', digits = 2)
 plot(compare_performance(lm1, lmm1, lmm2))
 ```
@@ -344,7 +344,7 @@ plot(compare_performance(lm1, lmm1, lmm2))
 Biztonság kedvéért hasonlítsuk össze csupán a két hierarchikus modellt egymással.
 
 ```{r lm_compare2, fig.width = 4, fig.height = 3}
-compare_performance(lmm1, lmm2) %>% 
+compare_performance(lmm1, lmm2) |> 
   knitr::kable('simple', digits = 2)
 plot(compare_performance(lmm1, lmm2))
 ```
@@ -352,7 +352,7 @@ plot(compare_performance(lmm1, lmm2))
 A két hierarchikus (kevert) modell közül is az lmm1 tűnik jobbnak, főleg azoknak a mérőszámoknak az alapján, amelyke a komplexitást büntetik (AIC, BIC). Csináljunk egy likelihood ratio tesztet, ami megmondja, hogy melyik modell illeszkedik jobban az adatokra:
 
 ```{r lm_compare3}
-test_likelihoodratio(lmm1,lmm2) %>% 
+test_likelihoodratio(lmm1,lmm2) |> 
   knitr::kable('simple', digits = 2)
 ```
 
@@ -361,7 +361,7 @@ A p-value 0.05 fölött van, tehát a lmm2 nem illeszkedik szignifikánsan jobba
 Vesd össze: ugyanez a teszt azt mondja, hogy az lmm1 jobb, mint az lm1, hiába sokkal bonyibb.
 
 ```{r lm_compare4}
-test_likelihoodratio(lm1,lmm1) %>% 
+test_likelihoodratio(lm1,lmm1) |> 
   knitr::kable('simple', digits = 2)
 ```
 
@@ -382,7 +382,7 @@ A summary függvény kiirogatja az R konzolba a modell fő paramétereit. Ez jó
 A tidy függvény kevesebb információt közöl, de takarosabb.
 
 ```{r lm_tidy}
-tidy(lmm1, conf.int = T) %>% 
+tidy(lmm1, conf.int = T) |> 
   knitr::kable('simple', digits = 2)
 ```
 

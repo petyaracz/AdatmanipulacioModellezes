@@ -1,4 +1,4 @@
-# plot
+z# plot
 # predict
 # CI / error / t / p
 
@@ -10,7 +10,7 @@ library(broom)
 # -- functions -- #
 
 plotLM = function(dat,x,y){
-  dat %>% 
+  dat |> 
     ggplot(aes({{x}},{{y}})) +
     geom_point() +
     geom_smooth(method = 'lm') +

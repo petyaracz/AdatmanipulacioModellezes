@@ -11,20 +11,20 @@ d
 length(unique(d$word))
 length(unique(d$subject))
 # effects of analogy and rules on regularity
-d %>% 
+d |> 
   ggplot(aes(analogy,regular)) +
   geom_jitter(width = 0, height = .1) +
   geom_smooth(method = 'glm', method.args = list(family = 'binomial'), se = FALSE) +
   scale_y_continuous(breaks = c(0,1))
 
-d %>% 
+d |> 
   ggplot(aes(rules,regular)) +
   geom_jitter(width = 0, height = .1) +
   geom_smooth(method = 'glm', method.args = list(family = 'binomial'), se = FALSE) +
   scale_y_continuous(breaks = c(0,1))
 
 # per subject?
-d %>% 
+d |> 
   ggplot(aes(analogy,regular)) +
   geom_jitter(width = 0, height = .1) +
   geom_smooth(method = 'glm', method.args = list(family = 'binomial'), se = FALSE) +

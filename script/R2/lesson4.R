@@ -35,17 +35,17 @@ plot(log_odds,odds)
 GTK = rbinom(128, 1, 85/128)
 TTK = rbinom(29, 1, 17/29)
 
-GTK = GTK %>% 
+GTK = GTK |> 
   tibble(school = 'GTK', admitted = .)
-TTK = TTK %>% 
+TTK = TTK |> 
   tibble(school = 'TTK', admitted = .)
 d = bind_rows(GTK,TTK)
 
-d %>% 
+d |> 
   count(school,admitted)
 
-d %>% 
-  count(school,admitted) %>% 
+d |> 
+  count(school,admitted) |> 
   pivot_wider(names_from = admitted, values_from = n)
 
 fit1 = glm(admitted ~ 1 + school, data = d, family = binomial(link = 'logit'))
@@ -58,11 +58,11 @@ fit1b = lm(admitted ~ 1 + school, data = d)
 tidy(fit1b)
 check_model(fit1b) 
 
-a1 = sum1 %>% 
-  filter(term == '(Intercept)') %>% 
+a1 = sum1 |> 
+  filter(term == '(Intercept)') |> 
   pull(estimate)
-b1 = sum1 %>% 
-  filter(term == 'schoolTTK') %>% 
+b1 = sum1 |> 
+  filter(term == 'schoolTTK') |> 
   pull(estimate)
 
 plogis(a1)
@@ -82,27 +82,27 @@ log(exp(a1)*exp(b1))
 GTK = rbinom(120, 1, .5)
 TTK = rbinom(30, 1, .75)
 
-GTK = GTK %>% 
+GTK = GTK |> 
   tibble(school = 'GTK', graduates = .)
-TTK = TTK %>% 
+TTK = TTK |> 
   tibble(school = 'TTK', graduates = .)
 d2 = bind_rows(GTK,TTK)
 
-d2 %>% 
+d2 |> 
   count(school,graduates)
 
-d2 %>% 
-  count(school,graduates) %>% 
+d2 |> 
+  count(school,graduates) |> 
   pivot_wider(names_from = graduates, values_from = n)
 
 fit2 = glm(graduates ~ 1 + school, data = d2, family = binomial(link = 'logit'))
 tidy(fit2)
 
-a2 = sum2 %>% 
-  filter(term == '(Intercept)') %>% 
+a2 = sum2 |> 
+  filter(term == '(Intercept)') |> 
   pull(estimate)
-b2 = sum2 %>% 
-  filter(term == 'schoolTTK') %>% 
+b2 = sum2 |> 
+  filter(term == 'schoolTTK') |> 
   pull(estimate)
 
 plogis(a2)
