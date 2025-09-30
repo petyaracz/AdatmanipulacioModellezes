@@ -40,7 +40,7 @@ Rácz, Péter; Lukics, Kriszti
 
 # Sillabusz: Haladó R
 
-1.  lineáris regresszió
+1.  [lineáris regresszió](https://github.com/petyaracz/AdatmanipulacioModellezes/blob/main/script/R2/lesson1.R)
 
 - elmélet
   - jel és zaj, inferencia és jóslás
