@@ -31,8 +31,7 @@ d |>
   geom_point() +
   theme_few() +
   geom_smooth(method = 'lm') +
-  geom_vline(xintercept = 0) +
-  coord_cartesian(xlim = c(-50,50), ylim = c(-200,200))
+  geom_vline(xintercept = 0)
 
 lm = lm(y ~ 1 + x, data = d)
 lm = lm(y ~ x, data = d)
@@ -59,8 +58,7 @@ d |>
   # geom_smooth(method = 'lm', se = F) +
   geom_abline(aes(intercept = lm$coefficients[1], slope = lm$coefficients[2])) +
   theme_few() +
-  geom_linerange(aes(x = x, ymin = y, ymax = pred, group = id), colour = 'red') +
-  coord_cartesian(ylim = c(-100,100),)
+  geom_linerange(aes(x = x, ymin = y, ymax = pred, group = id), colour = 'red')
 
 estimate = tidy(lm) |> 
   filter(term == 'x') |> 
@@ -71,7 +69,6 @@ std_error = tidy(lm) |>
 estimate/std_error
 
 # -- ti -- #
-
 
 d2 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l1d2.tsv')
 d3 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l1d3.tsv')
