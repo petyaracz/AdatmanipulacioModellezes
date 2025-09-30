@@ -1,4 +1,4 @@
-z# plot
+# plot
 # predict
 # CI / error / t / p
 
