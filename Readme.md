@@ -3,41 +3,6 @@ R órák
 Rácz, Péter; Lukics, Kriszti
 2025-02-14
 
-# Sillabusz: Kezdő R
-
-1.  Bevezetés az adatkezelésbe
-
-- select
-- filter
-- arrange
-- mutate
-
-2.  Bevezetés az adatvizualizációba
-
-- ggplot
-- aes
-- geom
-
-3.  Leíró statisztikák készítése
-
-- group by
-- mutate
-- summarise
-
-4.  Adatvizualizáció alapok
-
-- faceting
-- smooth
-- legend
-- axis
-
-5.  Takaros adatok
-6.  Széles és hosszú adatformátumok
-7.  További adatformátumok
-8.  Projektmunka
-9.  Haladó adatvizualizáció
-10. Adatkommunikáció: RMarkdown
-
 # Sillabusz: Haladó R
 
 1.  [lineáris regresszió](https://github.com/petyaracz/AdatmanipulacioModellezes/blob/main/script/R2/lesson1.R)
@@ -168,6 +133,41 @@ Rácz, Péter; Lukics, Kriszti
   - `(1|item)`, `(1|participant)`
 - házi:
   - Datacamp::Hierarchical_Regression::Chapter_4
+
+# Sillabusz: Kezdő R
+
+1.  Bevezetés az adatkezelésbe
+
+- select
+- filter
+- arrange
+- mutate
+
+2.  Bevezetés az adatvizualizációba
+
+- ggplot
+- aes
+- geom
+
+3.  Leíró statisztikák készítése
+
+- group by
+- mutate
+- summarise
+
+4.  Adatvizualizáció alapok
+
+- faceting
+- smooth
+- legend
+- axis
+
+5.  Takaros adatok
+6.  Széles és hosszú adatformátumok
+7.  További adatformátumok
+8.  Projektmunka
+9.  Haladó adatvizualizáció
+10. Adatkommunikáció: RMarkdown
 
 # Hasznos linkek
 
