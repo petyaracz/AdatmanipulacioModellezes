@@ -58,12 +58,43 @@ confint(lm1)
 
 # --- d2: heights, f centered --- #
 
+## plot
+plotLM(d2,height_father_c,height_son)
+
+## correlation
+with(d2, cor(height_father,height_son))
+
+## linear model fit
+lm2 = lm(height_son ~ height_father_c, data = d2)
+
+## linear model: a and b (or b0 and b1)
+lm1
+
+## linear model: summmary
+summary(lm2)
+
+## linear model: R2
+r2(lm1)
+
+## linear model: tidy, confint
+tidy(lm2, conf.int = T)
+
 # --- d3: heights, f scaled --- #
+
+plotLM(d3, height_father_r, height_son_r)
+
+lm3 = lm(height_son_r ~ height_father_r, data = d3)
+
+summary(lm3)
+
+tidy(lm3, conf.int = T)
 
 # --- d4: limbo! --- #
 
 # --- d5: outliers --- #
 
+plotLM(d5,height_father,height_son)
+       
 # -- predicting -- #
 
 str(d1)
