@@ -66,3 +66,41 @@ diagnostic_plots[[4]]
 diagnostic_plots[[5]]
 
 # your turn!
+
+# d1
+plotData(d1,height_father,height_son)
+
+lm1 = lm(height_son ~ height_father, data = d1)
+summary(lm1)
+
+plots1 = plot(check_model(lm1))
+plots1[[1]]
+plots1[[2]]
+plots1[[3]]
+plots1[[4]]
+plots1[[5]]
+
+# d2
+plotData(d2,iq,income)
+
+lm2 = lm(income ~ iq, data = d2)
+summary(lm2)
+
+plots1 = plot(check_model(lm2))
+plots1[[1]]
+plots1[[2]]
+plots1[[3]]
+plots1[[4]]
+plots1[[5]]
+
+plotData(d3, weight, size)
+
+lm3 = lm(size ~ weight, data = d3)
+summary(lm3)
+
+plots1 = plot(check_model(lm3))
+plots1[[1]]
+plots1[[2]]
+plots1[[3]]
+plots1[[4]]
+plots1[[5]]
