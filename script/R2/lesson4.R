@@ -58,9 +58,17 @@ summary(model)
 
 tidy(model, conf.int = T)
 
+plogis(-.8)
+plogis(-.4-1.6)
+plogis(-.4-.35)
+
 bad_model = lm(female ~ faculty, data = students)
 
 summary(bad_model)
+
+plots = plot(check_model(bad_model))
+plots[[5]]
+
 
 # Log odds for Arts (reference category)
 log_odds_arts = -0.405
@@ -96,15 +104,24 @@ plot(ps,odds)
 plot(ps,log_odds)
 plot(log_odds,odds)
 
-# -- d1 -- #
+# -- d2 -- #
 
-ggplot(d1, aes(lfpm10r,as.double(correct))) +
+ggplot(d2, aes(lfpm10r,as.double(knows))) +
   geom_point() +
   geom_smooth(method="glm",
               method.args=list(family="binomial"))
 
-fit1 = glm(correct ~ lfpm10r, data = d3, family = binomial(link = 'logit'))
+fit1 = glm(knows ~ lfpm10r, data = d2, family = binomial(link = 'logit'))
 
 tidy(fit1, conf.int = T)
 
-# -- d2 -- #
+plogis(2.28+.82)
+
+# -- d1 -- #
+
+fit2 = glm(cbind(n_known,n_unknown) ~ lfpm10r, data = d1, family = binomial)
+
+summary(fit2)
+tidy(fit2, conf.int = T)
+
+check_model(fit2)
