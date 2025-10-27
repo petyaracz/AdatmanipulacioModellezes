@@ -26,7 +26,7 @@ plot(check_model(lm1, panel = F))
 
 # 2. factor 2
 
-# read in dat/l5d2.tsv
+d2 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l5d2.tsv')
 # what is x? what is y?
 # plot y ~ x
 # fit a linear model
@@ -49,7 +49,6 @@ d3 |>
   ggplot(aes(high_school,maths)) +
   geom_boxplot()
 
-# read in dat/l5d3.tsv
 # what are x? what is y?
 # plot y ~ x
 # fit a linear model
@@ -59,6 +58,7 @@ d3b = d3 |>
   mutate(
     high_school2 = fct_reorder(high_school, maths)
   )
+
 d3c = d3 |> 
   mutate(
     high_school3 = fct_reorder(high_school, -maths)
@@ -85,8 +85,12 @@ tidy(lm4)
 d4 |> 
   ggplot(aes(edu,wage,colour = gender)) +
   geom_point() +
-  geom_smooth()
+  geom_smooth(method = 'lm')
 
+
+# m1: edu
+# m2: wage
+# m3: edu + wage
 
 plot_model(m1, 'est')
 compare_performance(m1,m2,m3)
@@ -95,13 +99,24 @@ plot(compare_performance(m1,m2,m3, metrics = 'common'))
 
 # 5. factor * numeric
 
-# read in dat/l5d5.tsv
+d5 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l5d5.tsv')
+
+d5$gender = as.factor(d5$gender)
+
 # what are x? what is y?
 # plot y ~ x
 # fit a linear model
 # what is a (the intercept)? what are b? what are their confidence intervals?
 
-plot_model(m1, terms = c('pred1','pred2'))
-plot_model(m1, terms = c('pred2','pred1'))
-anova(m1,m2)
-test_performance(m1,m2)
+m4 = lm(wage ~ gender + edu, data = d5)
+m5 = lm(wage ~ gender * edu, data = d5)
+
+plot_model(m4, 'pred', terms = c('gender','edu'))
+plot_model(m5, 'pred', terms = c('gender','edu'))
+
+plot_model(m4, 'pred', terms = c('edu','gender'))
+plot_model(m5, 'pred', terms = c('edu','gender'))
+
+anova(m4,m5)
+test_performance(m4,m5))
+compare_performance(m4,m5, metrics = 'common')
