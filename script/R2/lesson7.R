@@ -8,6 +8,10 @@ library(performance)
 library(sjPlot)
 library(psych)
 
+# -- quick test -- #
+
+# https://forms.gle/Q1GaLixtpNwVsomd9
+
 # -- read -- #
 
 d = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/szeged.tsv')
@@ -68,24 +72,19 @@ d |>
 
 # test for:
 
-# apparent_temperature ~ temperature + wind_speed / temperature * wind_speed
-lm1 = lm(apparent_temperature ~ temperature + wind_speed, data = d)
-lm2 = lm(apparent_temperature ~ temperature * wind_speed, data = d)
-# apparent_temperature ~ humidity + pressure / humidity * pressure
-# apparent_temperature ~ temperature + humidity / temperature * humidity
-# apparent_temperature ~ temperature + residual humidity
-# apparent_temperature ~ temperature + residual wind_speed
-
-lm1 = lm(apparent_temperature ~ humidity + pressure, data = d)
-lm2 = lm(apparent_temperature ~ humidity * pressure, data = d)
+# apparent_temperature ~ pred1 + pred2
+lm1 = lm(apparent_temperature ~ b1 + b2, data = d)
+lm2 = lm(apparent_temperature ~ b1 * b2, data = d)
 
 # checklist:
 # 1. coefficient estimates (tidy, plot_model('est'))
 tidy(lm1, conf.int = T)
 tidy(lm2, conf.int = T)
-plot_model(model, 'est')
+plot_model(lm1, 'est')
+plot_model(lm2, 'est')
 # 2. visualise estimates
-plot_model(lm2, 'pred', terms = c('humidity','pressure')) # 'term [1,2,3]'
+plot_model(lm2, 'pred', terms = c('b1','b2'))
+plot_model(lm2, 'pred', terms = c('b1','b2 [0, 15, 50]')) # 'term [1,2,3]'
 # 3. compare performance (plot)
 plot(compare_performance(lm1,lm2))
 # 4. test performance
