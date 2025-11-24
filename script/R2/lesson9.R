@@ -19,13 +19,6 @@ library(lme4)
 
 d = read_tsv("https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/lesson9.tsv")
 
-keep1 = sample(unique(d$participant), 12)
-d$keep_participant = d$participant %in% keep1
-keep2 = sample(unique(d$word), 12)
-d$keep_word = d$word %in% keep2
-
-write_tsv(d, '~/Github/AdatManipulacioModellezes/dat/R2/lesson9.tsv')
-
 # -- take a look -- #
 
 glimpse(d)
@@ -44,7 +37,6 @@ d |>
   ggplot(aes(participant_vocabulary_size,log_rt)) +
   geom_point() +
   geom_smooth(method = 'lm')
-
 
 # -- participant-level effects -- #
 
@@ -104,10 +96,27 @@ tidy(lmm1, conf.int = T)
 
 lmm2 = lmer(log_rt ~ participant_vocabulary_size * word_familiarity + (1|participant) + (1|word), data = d)
 
+tidy(lmm2, conf.int = T)
+
 # health
 check_model(lmm1)
 check_model(lmm2)
-# diagnostics
+# check_collinearity(lmm1)
+# check_autocorrelation(lmm1)
+# check_heteroscedasticity(lmm1)
+# check_residuals(lmm1)
+# check_collinearity(lmm2)
+# check_autocorrelation(lmm2)
+# check_heteroscedasticity(lmm2)
+# check_residuals(lmm2)
+
+# comparison
 plot(compare_performance(lmm1,lmm2, metrics = 'common'))
 test_likelihoodratio(lmm1,lmm2)
 test_performance(lmm2,lmm1)
+
+# viz
+plot_model(lmm2, 'est')
+
+plot_model(lmm2, 'pred', terms = c('participant_vocabulary_size','word_familiarity'))
+plot_model(lmm2, 'pred', terms = c('word_familiarity','participant_vocabulary_size'))
