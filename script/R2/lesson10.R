@@ -1,63 +1,82 @@
+# -- header -- #
+
+install.packages('maps')
+
 library(tidyverse)
+library(lme4)
 library(broom.mixed)
 library(performance)
 library(sjPlot)
-library(lme4)
+library(maps)
 
-d = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l10d1.tsv')
+world = map_data("world")
+tidy2 = partial(tidy, conf.int = T)
 
-# structure of d
-d
-length(unique(d$word))
-length(unique(d$subject))
-# effects of analogy and rules on regularity
-d |> 
-  ggplot(aes(analogy,regular)) +
-  geom_jitter(width = 0, height = .1) +
-  geom_smooth(method = 'glm', method.args = list(family = 'binomial'), se = FALSE) +
-  scale_y_continuous(breaks = c(0,1))
+# -- read -- #
 
-d |> 
-  ggplot(aes(rules,regular)) +
-  geom_jitter(width = 0, height = .1) +
-  geom_smooth(method = 'glm', method.args = list(family = 'binomial'), se = FALSE) +
-  scale_y_continuous(breaks = c(0,1))
+d1 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/anthropology1.tsv')
+d2 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/anthropology2.tsv')
 
-# per subject?
-d |> 
-  ggplot(aes(analogy,regular)) +
-  geom_jitter(width = 0, height = .1) +
-  geom_smooth(method = 'glm', method.args = list(family = 'binomial'), se = FALSE) +
-  scale_y_continuous(breaks = c(0,1)) +
-  facet_wrap(~subject)
+# -- gods -- #
 
-# "ordinary" GLM?
-glm1 = glm(regular ~ analogy, data = d, family = 'binomial')
-tidy(glm1)
+glimpse(d1)
 
-# "ordinary" GLM with participant factor?
-glm2 = glm(regular ~ analogy + subject, data = d, family = 'binomial')
-tidy(glm2)
+## visuals
 
-# "ordinary" GLM with participant interaction?
-glm3 = glm(regular ~ analogy * subject, data = d, family = 'binomial')
-View(tidy(glm3))
+ggplot() +
+  geom_polygon(data = world, aes(x=long, y = lat, group = group), fill = "lightgrey") + 
+  coord_fixed(1.3) +
+  geom_point(data = d1, aes(x = Long, y = Lat, colour = moral_gods)) +
+  scale_colour_viridis_c() +
+  theme_bw()
 
-# hierarchical GLM with participant grouping factor (random intercept)?
-glm4 = glmer(regular ~ analogy + (1|subject), data = d, family = 'binomial')
-tidy(glm4)
+d1 |> 
+  ggplot(aes(social_complexity,moral_gods)) +
+  geom_point()
 
-# hierarchical GLM with participant grouping factor (random intercept) and random slope?
-glm5 = glmer(regular ~ analogy + (1 + analogy|subject), data = d, family = 'binomial')
-tidy(glm5)
-plot(compare_performance(glm4, glm5))
+d1 |> 
+  ggplot(aes(as.factor(social_complexity),fill = as.factor(moral_gods))) +
+  geom_bar(position = position_dodge())
 
-# same with rules as predictor instead of analogy
-glm6 = glmer(regular ~ rules + (1 + rules |subject), data = d, family = 'binomial')
-tidy(glm6)
+d1 |> 
+  ggplot(aes(as.factor(social_complexity),fill = as.factor(moral_gods))) +
+  geom_bar(position = position_dodge()) +
+  coord_flip()
 
-plot(compare_performance(glm5, glm6))
+d1 |> 
+  ggplot(aes(as.factor(subsistence),fill = as.factor(moral_gods))) +
+  geom_bar(position = position_dodge()) +
+  coord_flip()
 
-# singular fit!
-# no convergence!
-# gods?
+d1 |> 
+  ggplot(aes(as.factor(social_complexity),fill = as.factor(moral_gods))) +
+  geom_bar(position = position_dodge()) +
+  coord_flip() +
+  facet_wrap( ~ region)
+
+## models
+
+lm1 = lm(moral_gods ~ social_complexity + subsistence, data = d1)
+lm2 = lmer(moral_gods ~ social_complexity + subsistence + (1|region), data = d1)
+lm3 = lmer(moral_gods ~ social_complexity + subsistence + (1 + social_complexity|region), data = d1)
+lm4 = lmer(moral_gods ~ social_complexity + subsistence + (1 + subsistence|region), data = d1)
+lm5 = lmer(moral_gods ~ social_complexity + subsistence + (1 + social_complexity + subsistence|region), data = d1)
+
+## evaluation
+
+plot(compare_performance(lm1,lm2,lm3))
+
+tidy2(lm1)
+tidy2(lm2)
+tidy2(lm3)
+
+plot_model(lm1, 'pred', terms = 'social_complexity')
+plot_model(lm2, 'pred', terms = 'social_complexity')
+plot_model(lm3, 'pred', terms = 'social_complexity')
+plot_model(lm1, 'pred', terms = 'subsistence')
+plot_model(lm2, 'pred', terms = 'subsistence')
+plot_model(lm3, 'pred', terms = 'subsistence')
+
+# -- grammar -- #
+
+glimpse(d2)
