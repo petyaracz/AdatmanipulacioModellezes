@@ -68,9 +68,11 @@ participants |>
 
 plm1 = lm(log_rt ~ participant_vocabulary_size, data = d)
 plm2 = lm(mean_participant_rt ~ participant_vocabulary_size, data = participants)
+plm1b = lm(log_rt ~ participant_vocabulary_size * participant, data = d)
 
 tidy(plm1, conf.int = T)
 tidy(plm2, conf.int = T)
+tidy(plm1b, conf.int = T) # lol
 
 ## words
 
