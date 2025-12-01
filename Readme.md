@@ -132,7 +132,7 @@ Rácz, Péter; Lukics, Kriszti
 - gyakorlat:
   - `(1|item)`, `(1|participant)`
 - házi:
-  - Datacamp::Hierarchical_Regression::Chapter_4
+  - Datacamp::Hierarchical_Regression::Chapter_[34]
 
 # Sillabusz: Kezdő R
 
