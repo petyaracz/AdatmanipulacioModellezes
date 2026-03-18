@@ -1,8 +1,6 @@
 # https://github.com/mwaskom/seaborn-data/blob/master/tips.csv ?
 
-https://docs.google.com/spreadsheets/d/1tah_62dVRVipbA-IY4p_B_vnTkKZMxP98UxFAtJqd1M/edit?usp=sharing
-
-https://github.com/petyaracz/Racz2025Bible
+https://docs.google.com/spreadsheets/d/1e9zCa6OLfgt_GS-raFxKmF0Mdl06o8JpKvpwaXA2IRY/edit?usp=sharing
 
 https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/refs/heads/main/dat/R/airbnb_cleaned_sample.csv
 
