@@ -125,3 +125,4 @@ d |>
 # harom legsikeresebb csapat a modern olimpiak torteneteben
 # a legsikeresebb csapat legsikeresebb sportagai
 # hogyan valtoztak a harom legsikeresebb sportagban az eredmenyek az evek soran
+# bonusz feladat: magyarok a nyari olimpian
