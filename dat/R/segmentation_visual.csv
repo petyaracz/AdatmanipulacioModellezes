@@ -1,4 +1,4 @@
-ID,medRT_train,medRT_diff,offline_all
+ID,RT_training,RT_difference,offline
 FF168_2,0.0262,-0.0042,0.4375
 BL185,0.082,0.07385,0.791666667
 KOR161,0.1785,0.2344,0.354166667
