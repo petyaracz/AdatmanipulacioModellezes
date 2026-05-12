@@ -298,9 +298,9 @@ p2_final <- ggplot(gap_americas_wide) +
 p2_final
 
 # ============================================================
-# hajrá csapat: 2002
+# hajrá csapat: life exp x gdp
 # ============================================================
-# - 2002 data
+# - válasszatok évet
 # - x = lifeExp, y = gdpPercap
 # - keressetek más outliereket
 
