@@ -312,35 +312,6 @@ p2_final
 
 
 
-# megoldás:
-
-gap_2002 <- gapminder |>
-  filter(year == 2002)
-
-outliers_2002 <- gap_2002 |>
-  filter(country %in% c("Botswana", "Lesotho", "Kuwait", "Norway"))
-
-# Scaffold: students fill in the blanks
-ggplot(gap_2002, aes(x = lifeExp, y = gdpPercap,
-                     colour = continent, size = pop)) +
-  geom_point(alpha = 0.6) +
-  geom_text_repel(data = outliers_2002,
-                  aes(label = country),
-                  size = 3.5, colour = "grey30",
-                  show.legend = FALSE) +
-  scale_y_log10(labels = scales::comma) +
-  scale_size_continuous(range = c(1, 14), guide = "none") +
-  labs(
-    x = "Life expectancy (years)",
-    y = "GDP per capita (log scale, USD)",
-    title = "Wealth and health across the world, 2002",
-    caption = "Source: Gapminder",
-    colour = NULL
-  ) +
-  theme_clean() +                          # reuse the function from above
-  theme(legend.position = "top")
-
-
 # ============================================================
 # hajrá csapat 2: Asia, GDP per capita change
 # ============================================================
@@ -360,27 +331,3 @@ ggplot(gap_2002, aes(x = lifeExp, y = gdpPercap,
 
 
 
-# megoldas:
-
-gap_asia_wide <- gapminder |>
-  filter(continent == "Asia", year %in% c(1952, 2007)) |>
-  select(country, year, gdpPercap) |>
-  pivot_wider(names_from = year, values_from = gdpPercap,
-              names_prefix = "y") |>
-  mutate(country = fct_reorder(country, y2007))
-
-ggplot(gap_asia_wide) +
-  geom_segment(aes(x = y1952, xend = y2007,
-                   y = country, yend = country),
-               arrow = arrow(length = unit(0.15, "cm"), type = "closed"),
-               colour = "grey60") +
-  geom_point(aes(x = y1952, y = country), colour = "#d7816a", size = 2) +
-  geom_point(aes(x = y2007, y = country), colour = "#4a7c59", size = 2) +
-  labs(
-    x = "GDP per capita (USD)",
-    y = NULL,
-    title = "Economic growth in Asia",
-    subtitle = "Change from 1952 (orange) to 2007 (green)",
-    caption = "Source: Gapminder"
-  ) +
-  theme_clean()
