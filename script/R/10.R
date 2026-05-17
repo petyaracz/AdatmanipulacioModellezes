@@ -288,7 +288,7 @@ p2_final <- ggplot(gap_americas_wide) +
   scale_x_continuous(limits = c(37, 85)) +
   labs(
     x = "Life expectancy (years)",
-    y = NULL,
+    y = NULL,LASDKn qw/lkhqhoru
     title = "Life expectancy in the Americas",
     subtitle = "Change from 1952 (orange) to 2007 (green)",
     caption = "Source: Gapminder"
