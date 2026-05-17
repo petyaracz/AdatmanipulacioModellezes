@@ -9,6 +9,7 @@ library(slider)    # gördülő átlag
 library(ggrepel)
 
 szeged = read_tsv("https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/refs/heads/main/dat/R2/szeged.tsv")
+magyar = read_tsv("https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/refs/heads/main/dat/R/hun_birth_death_41_25.tsv")
 
 # Gyors ellenőrzés
 glimpse(szeged)
@@ -197,44 +198,6 @@ p2_final
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-# megoldás
-
-honap_pa <- szeged |>
-  mutate(honap = floor_date(ymd, "month")) |>
-  group_by(honap) |>
-  summarise(
-    paratartalom = mean(humidity, na.rm = TRUE),
-    .groups = "drop"
-  )
-
-# Scaffold: a hallgatók töltik ki a hiányzó részeket
-
-ggplot(honap_pa, aes(x = honap, y = paratartalom)) +
-  geom_line(colour = "steelblue", linewidth = 0.7) +
-  geom_point(colour = "steelblue", size = 1.5) +
-  scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
-  scale_y_continuous(limits = c(0, 1),
-                     labels = scales::percent_format()) +
-  labs(
-    x = NULL,
-    y = "Humidity",
-    title = "Monthly mean humidity in Szeged",
-    subtitle = "2006–2016"
-  ) +
-  theme_clean()
-
-
 # ============================================================
 # hajrá csapat 2: Éves hőmérsékleti anomália
 # ============================================================
@@ -243,50 +206,10 @@ ggplot(honap_pa, aes(x = honap, y = paratartalom)) +
 # geom_ribbon: a historikus tartomány (min-max sáv)
 # geom_line: a kiválasztott év
 
-# 10 éves napi referencia
-referencia <- szeged |>
-  mutate(napszam = yday(ymd)) |>
-  group_by(napszam) |>
-  summarise(
-    atlag   = mean(temperature, na.rm = TRUE),
-    minimum = min(temperature, na.rm = TRUE),
-    maximum = max(temperature, na.rm = TRUE),
-    .groups = "drop"
-  )
 
-# Kiválasztott év: lehet bármi (majdnem bármi)
-kivalasztott_ev <- 2012
-
-ev_adat <- szeged |>
-  filter(year(ymd) == kivalasztott_ev) |>
-  mutate(napszam = yday(ymd))
-
-p_anomalia <- ggplot() +
-  geom_ribbon(
-    data = referencia,
-    aes(x = napszam, ymin = minimum, ymax = maximum),
-    fill = "steelblue", alpha = 0.15
-  ) +
-  geom_line(
-    data = referencia,
-    aes(x = napszam, y = atlag),
-    colour = "steelblue", linewidth = 0.7, linetype = "dashed"
-  ) +
-  geom_line(
-    data = ev_adat,
-    aes(x = napszam, y = temperature),
-    colour = "#c0392b", linewidth = 0.8
-  ) +
-  scale_x_continuous(
-    breaks = c(1, 91, 182, 274),
-    labels = c("Jan", "Apr", "Jul", "Oct")
-  ) +
-  labs(
-    x = NULL,
-    y = "Temperature (°C)",
-    title = glue::glue("{kivalasztott_ev} vs. 10-year average"),
-    subtitle = "Red: selected year  |  Blue dashed: mean  |  Shaded: full range"
-  ) +
-  theme_clean()
-
-p_anomalia
+# ============================================================
+# hajrá csapat 3: Magyar népességfogyás:
+# számold ki a népességfogyást minden sorra 
+# számolj belőle gördülő átlagot a 01-25 intervallumra
+# ábrázold, de a dátum legyen rendesen (1990 és 2000 között több hely legyen, mint 2000 és 2001 között)
+# ============================================================
