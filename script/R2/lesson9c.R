@@ -1,10 +1,10 @@
 # -- head -- #
 
-install.packages('lme4')
+install.packages('glmmTMB')
 install.packages('broom.mixed')
 
 library(tidyverse)
-library(lme4)
+library(glmmTMB)
 library(broom.mixed)
 library(performance)
 library(sjPlot)
@@ -81,9 +81,9 @@ lm2a = lm(mean_rt ~ scaled_word_familiarity, data = words)
 
 # -- hierarchical model -- #
 
-lm3a = lmer(resp.rt ~ scaled_word_familiarity + (1|word), data = d)
+lm3a = glmmTMB(resp.rt ~ scaled_word_familiarity + (1|word), data = d)
 
-lm3b = lmer(resp.rt ~ scaled_word_familiarity + (1|participant) + (1|word), data = d)
+lm3b = glmmTMB(resp.rt ~ scaled_word_familiarity + (1|participant) + (1|word), data = d)
 
 # and participant vocabulary size?
 

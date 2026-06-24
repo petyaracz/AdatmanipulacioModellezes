@@ -1,4 +1,4 @@
-install.packages('lme4')
+install.packages('glmmTMB')
 install.packages('broom.mixed')
 
 library(tidyverse)
@@ -7,7 +7,7 @@ library(performance)
 library(sjPlot)
 library(psych)
 library(janitor)
-library(lme4)
+library(glmmTMB)
 
 # load d
 d = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/lesson9.tsv')
@@ -95,15 +95,15 @@ lm6 = lm(resp.rt ~ scaled_age * scaled_vocabulary_size, data = d)
 plot(compare_performance(lm5,lm6))
 tidy(lm6, conf.int = T)
 
-glm1 = lmer(resp.rt ~ scaled_age + scaled_vocabulary_size + (1|participant), data = d)
-glm2 = lmer(resp.rt ~ scaled_age * scaled_vocabulary_size + (1|participant), data = d)
+glm1 = glmmTMB(resp.rt ~ scaled_age + scaled_vocabulary_size + (1|participant), data = d)
+glm2 = glmmTMB(resp.rt ~ scaled_age * scaled_vocabulary_size + (1|participant), data = d)
 plot(compare_performance(glm1,glm2))
 tidy(glm2, conf.int = T)
 
 ranef(glm1)
 
-glm3 = lmer(resp.rt ~ scaled_age + scaled_vocabulary_size + (1|participant) + (1|word), data = d)
+glm3 = glmmTMB(resp.rt ~ scaled_age + scaled_vocabulary_size + (1|participant) + (1|word), data = d)
 plot(compare_performance(glm1,glm3))
 
-ranef(glm3)$word
-ranef(glm3)$participant
+ranef(glm3)$cond$word
+ranef(glm3)$cond$participant

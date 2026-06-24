@@ -3,7 +3,7 @@
 install.packages('maps')
 
 library(tidyverse)
-library(lme4)
+library(glmmTMB)
 library(broom.mixed)
 library(performance)
 library(sjPlot)
@@ -57,10 +57,10 @@ d1 |>
 ## models
 
 lm1 = lm(moral_gods ~ social_complexity + subsistence, data = d1)
-lm2 = lmer(moral_gods ~ social_complexity + subsistence + (1|region), data = d1)
-lm3 = lmer(moral_gods ~ social_complexity + subsistence + (1 + social_complexity|region), data = d1)
-lm4 = lmer(moral_gods ~ social_complexity + subsistence + (1 + subsistence|region), data = d1)
-lm5 = lmer(moral_gods ~ social_complexity + subsistence + (1 + social_complexity + subsistence|region), data = d1)
+lm2 = glmmTMB(moral_gods ~ social_complexity + subsistence + (1|region), data = d1)
+lm3 = glmmTMB(moral_gods ~ social_complexity + subsistence + (1 + social_complexity|region), data = d1)
+lm4 = glmmTMB(moral_gods ~ social_complexity + subsistence + (1 + subsistence|region), data = d1)
+lm5 = glmmTMB(moral_gods ~ social_complexity + subsistence + (1 + social_complexity + subsistence|region), data = d1)
 
 ## evaluation
 

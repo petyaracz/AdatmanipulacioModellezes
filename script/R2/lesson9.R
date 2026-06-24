@@ -5,15 +5,15 @@
 
 # -- setup -- #
 
-# install the lme4 and broom.mixed packages
-install.packages("lme4")
+# install the glmmTMB and broom.mixed packages
+install.packages("glmmTMB")
 install.packages("broom.mixed")
 
 library(tidyverse)
 library(broom.mixed)
 library(performance)
 library(sjPlot)
-library(lme4)
+library(glmmTMB)
 
 # -- read -- #
 
@@ -82,7 +82,7 @@ tidy(plm1b, conf.int = T) # lol
 
 # -- mixed model -- #
 
-plm3 = lmer(log_rt ~ participant_vocabulary_size + (1|participant), data = d)
+plm3 = glmmTMB(log_rt ~ participant_vocabulary_size + (1|participant), data = d)
 
 tidy(plm1, conf.int = T)
 tidy(plm2, conf.int = T)
@@ -92,11 +92,11 @@ tidy(plm3, conf.int = T)
 
 # -- nested model -- #
 
-lmm1 = lmer(log_rt ~ participant_vocabulary_size + word_familiarity + (1|participant) + (1|word), data = d)
+lmm1 = glmmTMB(log_rt ~ participant_vocabulary_size + word_familiarity + (1|participant) + (1|word), data = d)
 
 tidy(lmm1, conf.int = T)
 
-lmm2 = lmer(log_rt ~ participant_vocabulary_size * word_familiarity + (1|participant) + (1|word), data = d)
+lmm2 = glmmTMB(log_rt ~ participant_vocabulary_size * word_familiarity + (1|participant) + (1|word), data = d)
 
 tidy(lmm2, conf.int = T)
 
