@@ -1,11 +1,46 @@
 R órák
 ================
 Rácz, Péter; Lukics, Kriszti
-2025-02-14
+2026-06-30
+
+# Sillabusz: Kezdő R
+
+1.  Bevezetés az adatkezelésbe
+
+- select
+- filter
+- arrange
+- mutate
+
+2.  Bevezetés az adatvizualizációba
+
+- ggplot
+- aes
+- geom
+
+3.  Leíró statisztikák készítése
+
+- group by
+- mutate
+- summarise
+
+4.  Adatvizualizáció alapok
+
+- faceting
+- smooth
+- legend
+- axis
+
+5.  Takaros adatok
+6.  Széles és hosszú adatformátumok
+7.  További adatformátumok
+8.  Projektmunka
+9.  Haladó adatvizualizáció
+10. Adatkommunikáció: RMarkdown
 
 # Sillabusz: Haladó R
 
-1.  [lineáris regresszió](https://github.com/petyaracz/AdatmanipulacioModellezes/blob/main/script/R2/lesson1.R)
+1.  lineáris regresszió
 
 - elmélet
   - jel és zaj, inferencia és jóslás
@@ -31,7 +66,6 @@ Rácz, Péter; Lukics, Kriszti
 
 - elmélet:
   - predikció és extrapoláció
-  - a konfidencia-intervallum
 - gyakorlat
   - `summary()`
   - `glance()`
@@ -67,7 +101,7 @@ Rácz, Péter; Lukics, Kriszti
 
 - elmélet:
   - alul- és túlillesztés
-    - szabadságfok  
+    - szabadságfok\
   - több metszéspont
 - gyakorlat:
   - `1 + a`, `0 + a`
@@ -110,7 +144,7 @@ Rácz, Péter; Lukics, Kriszti
 - elmélet:
 - gyakorlat:
 - résztvevőszintű adatok és megfigyelésszintű adatok
-- lme4()
+- glmmTMB()
 - broom.mixed
 - residual r^2, conditional r^2
 - házi:
@@ -132,42 +166,7 @@ Rácz, Péter; Lukics, Kriszti
 - gyakorlat:
   - `(1|item)`, `(1|participant)`
 - házi:
-  - Datacamp::Hierarchical_Regression::Chapter_[34]
-
-# Sillabusz: Kezdő R
-
-1.  Bevezetés az adatkezelésbe
-
-- select
-- filter
-- arrange
-- mutate
-
-2.  Bevezetés az adatvizualizációba
-
-- ggplot
-- aes
-- geom
-
-3.  Leíró statisztikák készítése
-
-- group by
-- mutate
-- summarise
-
-4.  Adatvizualizáció alapok
-
-- faceting
-- smooth
-- legend
-- axis
-
-5.  Takaros adatok
-6.  Széles és hosszú adatformátumok
-7.  További adatformátumok
-8.  Projektmunka
-9.  Haladó adatvizualizáció
-10. Adatkommunikáció: RMarkdown
+  - Datacamp::Hierarchical_Regression::Chapter_4
 
 # Hasznos linkek
 
@@ -197,8 +196,7 @@ library(tidyverse) # tidyverse csomagok, select/filter/arrange/mutate/summarise,
 library(broom.mixed) # tidy, glance, augment
 library(performance) # modellösszehasonlítgatás
 library(sjPlot) # modell becsléseinek ábrázolása
-library(lme4) # hierarchikus / kevert lineáris modellek
-library(glmmTMB) # sjplotnak kell
+library(glmmTMB) # hierarchikus / kevert lineáris modellek
 ```
 
 ## 1. Ábrázolás, feltérképezés (exploratory data analysis)
@@ -319,15 +317,15 @@ lm4 <- lm(Sepal.Width ~ Sepal.Length * Petal.Length, data = iris)
 lm5 <- lm(Sepal.Width ~ Petal.Width + Petal.Length + Sepal.Length + Species, data = iris)
 ```
 
-### 2.2 Hierachikus lineáris modell
+### 2.2. Hierarchikus lineáris modell
 
 Szintaxis:
 
 ``` r
 # grouping faktor / random intercept:
-lmm1 <- lmer(Sepal.Width ~ Petal.Width + (1 | Species), data = iris)
+lmm1 <- glmmTMB(Sepal.Width ~ Petal.Width + (1 | Species), data = iris)
 # grouping faktor és saját slope / random intercept és random slope:
-lmm2 <- lmer(Sepal.Width ~ Petal.Width + (1 + Petal.Width | Species), data = iris)
+lmm2 <- glmmTMB(Sepal.Width ~ Petal.Width + (1 + Petal.Width | Species), data = iris)
 ```
 
 ### 2.3. Generalizált lineáris modell
@@ -342,20 +340,24 @@ glm1 <- glm(setosa ~ Sepal.Length, data = iris, family = binomial(link = "logit"
 
 # persze ez is lehet hierarchikus modell
 
-glmm1 <- glmer(setosa ~ Sepal.Length + (1 | Species), data = iris, family = binomial(link = "logit"))
+glmm1 <- glmmTMB(setosa ~ Sepal.Length + (1 | Species), data = iris, family = binomial(link = "logit"))
 ```
+
+    ## Warning in finalizeTMB(TMBStruc, obj, fit, h, data.tmb.old): Model convergence
+    ## problem; false convergence (8). See vignette('troubleshooting'),
+    ## help('diagnose')
 
 ------------------------------------------------------------------------
 
-Több lme4
-[itt](https://cran.r-project.org/web/packages/lme4/index.html).
+Több glmmTMB [itt](https://glmmtmb.github.io/glmmTMB/).
 
 ------------------------------------------------------------------------
 
 ## 3. Modellkritika
 
-Öt modellt fogunk megnézni részletesebben. Ezek az lm1-3 és az lmm1-2.
-Emlékeztetőül:
+Három modell a komoly jelölt: az lm1, az lmm1 és az lmm2. Az lm2-t és az
+lm3-at csak azért nézzük meg, hogy lássuk, mi történik kollineáris
+prediktorokkal. Emlékeztetőül:
 
 ``` r
 formula(lm1)
@@ -409,9 +411,9 @@ check_model(lm2)
 
 ![](Readme_files/figure-gfm/lm_assumptions2-1.png)<!-- -->
 
-A második modellban megengedtük azt, hogy a lineáris modellnek a három
-fajra különböző interceptje legyen, de azt nem, hogy a slope is
-különböző legyen. A maradékok eloszlása és a variancia is javult, de nem
+Az lm2-ben megengedtük, hogy a lineáris modellnek a három fajra
+különböző interceptje legyen, de azt nem, hogy a slope is különböző
+legyen. A maradékok eloszlása és a variancia is javult, de nem
 tökéletes. A prediktorok közötti kollinearitás viszont elég súlyos: a
 három virágfajta méretei drasztikusan különböznek, ezért a species elég
 jól megragadja a petal width-et, azaz aggályos őket ugyanabban a
@@ -439,11 +441,11 @@ check_model(lm3)
 
 ![](Readme_files/figure-gfm/lm_assumptions3-1.png)<!-- -->
 
-A harmadik modellban megengedtük azt, hogy külön intercept és slope
-legyen a három fajra. Ez megoldja a maradékok eloszlásának a problémáit,
-viszont itt már gigantikus bajunk lesz azzal, hogy a két prediktor
-nagyon durván kollineáris (az interakció két olyan dolgot “szoroz
-össze”, amik már eleve ugyanazt mérik, tehát gáz van).
+Az lm3-ban külön intercept és slope is van a három fajra. Ez megoldja a
+maradékok eloszlásának a problémáit, viszont itt már gigantikus bajunk
+lesz azzal, hogy a két prediktor nagyon durván kollineáris (az
+interakció két olyan dolgot “szoroz össze”, amik már eleve ugyanazt
+mérik, tehát gáz van).
 
 #### lmm1
 
@@ -451,16 +453,17 @@ nagyon durván kollineáris (az interakció két olyan dolgot “szoroz
 check_model(lmm1)
 ```
 
+    ## `check_outliers()` does not yet support models of class `glmmTMB`.
+
 ![](Readme_files/figure-gfm/lm_assumptions4-1.png)<!-- -->
 
 Az az alapvető baj, hogy minket a species hatása igazából most nem
 érdekel. Minket az érdekel, hogy ebben a virágtípusban a szirom hossza
 megjósolja-e a szirom szélességét. Viszont a species fontos eleme az
 adatok hierarchiájának: a különböző fajták eleve eltérő méretűek. Ezért
-a negyedik modellban betesszük a species-t grouping faktornak. Az
-eredmény hasonló az lm2-höz, a maradékok eloszlása és a variancia is jó,
-de nem tökéletes. A kollinearitással most nincsen córesz, mivel a
-species nem prediktor, hanem grouping factor.
+az lmm1-ben a species-t grouping faktornak tesszük be. A maradékok az
+lm2-höz hasonlóan néznek ki, viszont kollinearitással most nincsen
+córesz, mert a species nem prediktor, hanem grouping factor.
 
 #### lmm2
 
@@ -468,22 +471,18 @@ species nem prediktor, hanem grouping factor.
 check_model(lmm2)
 ```
 
+    ## `check_outliers()` does not yet support models of class `glmmTMB`.
+
 ![](Readme_files/figure-gfm/lm_assumptions5-1.png)<!-- -->
 
-Az ötödik modellban megengedjük, hogy a slope a grouping factor által
-meghatározott csoportokban különböző legyen. Így már elég szépek a
-maradékok. Ami azt illeti, olyan nagy javulás nem látszik az
-intercept-only modellhez képest. Itt sem kell kollinearitás miatt
-aggódnunk, mert a species nem fixed effect, hanem grouping factor.
+Az lmm2-ben a slope is csoportonként különböző lehet. A maradékok
+szépek, de az intercept-only lmm1-hez képest nincs nagy javulás.
 
 **Melyik modell a jobb?**
 
-Tudjuk, hogy az lm1 eleve aggályos, mert hülyén néznek ki a maradékok,
-az lm2 és az lm3 pedig konkrétan teljesen vállalhatatlanok, mert olyan
-kollineáris a két prediktor, hogy valószínűleg értelmezhetetlenek az
-estimate-ek: a modell hősiesen kiszámolt valamit, de amit kiszámolt,
-annak kevés köze van a valósághoz. Az interakcióról nem is beszélve.
-Hasonlítsuk össze az lm1-lmm1-lmm2-t.
+Az lm1 maradékai csúnyák, az lm2 és az lm3 pedig a kollinearitás miatt
+vállalhatatlan: az estimate-ek valószínűleg értelmezhetetlenek. Marad a
+három jelölt, hasonlítsuk össze az lm1-lmm1-lmm2-t.
 
 ``` r
 compare_performance(lm1, lmm1, lmm2) |> 
@@ -492,9 +491,9 @@ compare_performance(lm1, lmm1, lmm2) |>
 
 | Name | Model | AIC | AIC_wt | AICc | AICc_wt | BIC | BIC_wt | RMSE | Sigma | R2_conditional | R2_marginal | ICC | R2 | R2_adjusted |
 |:---|:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| lm1 | lm | 159.96 | 0.00 | 160.13 | 0.00 | 169.00 | 0.00 | 0.4 | 0.41 | NA | NA | NA | 0.13 | 0.13 |
-| lmm1 | lmerMod | 89.98 | 0.89 | 90.26 | 0.91 | 102.02 | 0.99 | 0.3 | 0.30 | 0.93 | 0.25 | 0.91 | NA | NA |
-| lmm2 | lmerMod | 94.24 | 0.11 | 94.83 | 0.09 | 112.31 | 0.01 | 0.3 | 0.30 | 0.94 | 0.26 | 0.91 | NA | NA |
+| lm1 | lm | 159.96 | 0.00 | 160.13 | 0.0 | 169.00 | 0.00 | 0.4 | 0.41 | NA | NA | NA | 0.13 | 0.13 |
+| lmm1 | glmmTMB | 89.75 | 0.88 | 90.02 | 0.9 | 101.79 | 0.99 | 0.3 | 0.30 | 0.91 | 0.32 | 0.87 | NA | NA |
+| lmm2 | glmmTMB | 93.75 | 0.12 | 94.33 | 0.1 | 111.81 | 0.01 | 0.3 | 0.30 | 0.91 | 0.32 | 0.87 | NA | NA |
 
 ``` r
 plot(compare_performance(lm1, lmm1, lmm2))
@@ -525,8 +524,8 @@ compare_performance(lmm1, lmm2) |>
 
 | Name | Model | AIC | AIC_wt | AICc | AICc_wt | BIC | BIC_wt | R2_conditional | R2_marginal | ICC | RMSE | Sigma |
 |:---|:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| lmm1 | lmerMod | 89.98 | 0.89 | 90.26 | 0.91 | 102.02 | 0.99 | 0.93 | 0.25 | 0.91 | 0.3 | 0.3 |
-| lmm2 | lmerMod | 94.24 | 0.11 | 94.83 | 0.09 | 112.31 | 0.01 | 0.94 | 0.26 | 0.91 | 0.3 | 0.3 |
+| lmm1 | glmmTMB | 89.75 | 0.88 | 90.02 | 0.9 | 101.79 | 0.99 | 0.91 | 0.32 | 0.87 | 0.3 | 0.3 |
+| lmm2 | glmmTMB | 93.75 | 0.12 | 94.33 | 0.1 | 111.81 | 0.01 | 0.91 | 0.32 | 0.87 | 0.3 | 0.3 |
 
 ``` r
 plot(compare_performance(lmm1, lmm2))
@@ -550,10 +549,10 @@ test_likelihoodratio(lmm1,lmm2) |>
     ## Some of the nested models seem to be identical and probably only vary in
     ##   their random effects.
 
-|      | Name | Model   |  df | df_diff | Chi2 |    p |
-|------|:-----|:--------|----:|--------:|-----:|-----:|
-| lmm1 | lmm1 | lmerMod |   4 |      NA |   NA |   NA |
-| lmm2 | lmm2 | lmerMod |   6 |       2 | 0.34 | 0.84 |
+|      | Name | Model   |  df | df_diff | Criterion | Chi2 |   p |
+|------|:-----|:--------|----:|--------:|----------:|-----:|----:|
+| lmm1 | lmm1 | glmmTMB |   4 |      NA |     81.75 |   NA |  NA |
+| lmm2 | lmm2 | glmmTMB |   6 |       2 |     81.75 |    0 |   1 |
 
 A p-value 0.05 fölött van, tehát a lmm2 nem illeszkedik szignifikánsan
 jobban az adatokra, mint a lmm1. A BIC és az AIC is kisebb az lmm1
@@ -567,10 +566,10 @@ test_likelihoodratio(lm1,lmm1) |>
   knitr::kable('simple', digits = 2)
 ```
 
-|      | Name | Model   |  df | df_diff |  Chi2 |   p |
-|------|:-----|:--------|----:|--------:|------:|----:|
-| lm1  | lm1  | lm      |   3 |      NA |    NA |  NA |
-| lmm1 | lmm1 | lmerMod |   4 |       1 | 71.98 |   0 |
+|      | Name | Model   |  df | df_diff | Criterion |  Chi2 |   p |
+|------|:-----|:--------|----:|--------:|----------:|------:|----:|
+| lm1  | lm1  | lm      |   3 |      NA |    153.96 |    NA |  NA |
+| lmm1 | lmm1 | glmmTMB |   4 |       1 |     81.75 | 72.21 |   0 |
 
 ------------------------------------------------------------------------
 
@@ -584,30 +583,29 @@ Több modellkritika [itt](https://easystats.github.io/performance/).
 summary(lmm1)
 ```
 
-    ## Linear mixed model fit by REML ['lmerMod']
-    ## Formula: Sepal.Width ~ Petal.Width + (1 | Species)
-    ##    Data: iris
+    ##  Family: gaussian  ( identity )
+    ## Formula:          Sepal.Width ~ Petal.Width + (1 | Species)
+    ## Data: iris
     ## 
-    ## REML criterion at convergence: 83.7
-    ## 
-    ## Scaled residuals: 
-    ##     Min      1Q  Median      3Q     Max 
-    ## -3.8786 -0.6281  0.0294  0.6323  2.8523 
+    ##       AIC       BIC    logLik -2*log(L)  df.resid 
+    ##      89.7     101.8     -40.9      81.7       146 
     ## 
     ## Random effects:
+    ## 
+    ## Conditional model:
     ##  Groups   Name        Variance Std.Dev.
-    ##  Species  (Intercept) 0.92709  0.9629  
-    ##  Residual             0.09047  0.3008  
+    ##  Species  (Intercept) 0.59433  0.7709  
+    ##  Residual             0.08991  0.2998  
     ## Number of obs: 150, groups:  Species, 3
     ## 
-    ## Fixed effects:
-    ##             Estimate Std. Error t value
-    ## (Intercept)   2.1524     0.5747   3.745
-    ## Petal.Width   0.7546     0.1197   6.303
+    ## Dispersion estimate for gaussian family (sigma^2): 0.0899 
     ## 
-    ## Correlation of Fixed Effects:
-    ##             (Intr)
-    ## Petal.Width -0.250
+    ## Conditional model:
+    ##             Estimate Std. Error z value Pr(>|z|)    
+    ## (Intercept)   2.1691     0.4696   4.619 3.85e-06 ***
+    ## Petal.Width   0.7406     0.1231   6.015 1.80e-09 ***
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 A summary függvény kiirogatja az R konzolba a modell fő paramétereit. Ez
 jó, csak nehéz berakni mondjuk egy táblázatba.
@@ -619,12 +617,12 @@ tidy(lmm1, conf.int = T) |>
   knitr::kable('simple', digits = 2)
 ```
 
-| effect | group | term | estimate | std.error | statistic | conf.low | conf.high |
-|:---|:---|:---|---:|---:|---:|---:|---:|
-| fixed | NA | (Intercept) | 2.15 | 0.57 | 3.75 | 1.03 | 3.28 |
-| fixed | NA | Petal.Width | 0.75 | 0.12 | 6.30 | 0.52 | 0.99 |
-| ran_pars | Species | sd\_\_(Intercept) | 0.96 | NA | NA | NA | NA |
-| ran_pars | Residual | sd\_\_Observation | 0.30 | NA | NA | NA | NA |
+| effect | component | group | term | estimate | std.error | statistic | p.value | conf.low | conf.high |
+|:---|:---|:---|:---|---:|---:|---:|---:|---:|---:|
+| fixed | cond | NA | (Intercept) | 2.17 | 0.47 | 4.62 | 0 | 1.25 | 3.09 |
+| fixed | cond | NA | Petal.Width | 0.74 | 0.12 | 6.02 | 0 | 0.50 | 0.98 |
+| ran_pars | cond | Species | sd\_\_(Intercept) | 0.77 | NA | NA | NA | 0.27 | 0.34 |
+| ran_pars | cond | Residual | sd\_\_Observation | 0.30 | NA | NA | NA | NA | NA |
 
 Ábrázoljuk a modell becsléseit.
 
@@ -640,6 +638,14 @@ meg egy modellt, amiben sok van.
 ``` r
 plot_model(lm5, 'est')
 ```
+
+    ## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+    ## ℹ Please use `linewidth` instead.
+    ## ℹ The deprecated feature was likely used in the sjPlot package.
+    ##   Please report the issue at <https://github.com/strengejacke/sjPlot/issues>.
+    ## This warning is displayed once per session.
+    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+    ## generated.
 
 ![](Readme_files/figure-gfm/sjplot1b-1.png)<!-- -->
 
@@ -673,6 +679,10 @@ plot_model(lm3, 'pred', terms = c('Petal.Width','Species'))
 ``` r
 plot_model(lm3, 'pred', terms = c('Species','Petal.Width'))
 ```
+
+    ## Ignoring unknown labels:
+    ## • linetype : "Petal.Width"
+    ## • shape : "Petal.Width"
 
 ![](Readme_files/figure-gfm/sjplot2b-2.png)<!-- -->
 
