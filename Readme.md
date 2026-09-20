@@ -170,10 +170,6 @@ Rácz, Péter; Lukics, Kriszti
 - házi:
   - Datacamp::Hierarchical_Regression::Chapter_4
 
-# Hasznos linkek
-
-[itt.](https://peterracz.wordpress.com/teaching/intro-r-bevezetes-az-r-programozasba/)
-
 # Acknowledgement
 
 This class is supported by DataCamp, the most intuitive learning
