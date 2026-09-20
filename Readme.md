@@ -40,6 +40,8 @@ Rácz, Péter; Lukics, Kriszti
 
 # Sillabusz: Haladó R
 
+[Hasznos linkek](https://peterracz.wordpress.com/teaching/linear-regression-bucket/)
+
 1.  lineáris regresszió
 
 - elmélet
