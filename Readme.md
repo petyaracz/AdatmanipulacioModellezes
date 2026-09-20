@@ -5,6 +5,8 @@ Rácz, Péter; Lukics, Kriszti
 
 # Sillabusz: Kezdő R
 
+[Kísérő tankönyv](https://r4ds.hadley.nz/)
+
 1.  Bevezetés az adatkezelésbe
 
 - select
@@ -41,6 +43,11 @@ Rácz, Péter; Lukics, Kriszti
 # Sillabusz: Haladó R
 
 [Hasznos linkek](https://peterracz.wordpress.com/teaching/linear-regression-bucket/)
+
+Tankönyvek
+
+- 1-8. alkalom [itt](https://openintro-ims.netlify.app/regression-modeling)
+- 9-11. alkalom [itt](https://m-clark.github.io/mixed-models-with-R/)
 
 1.  lineáris regresszió
 
