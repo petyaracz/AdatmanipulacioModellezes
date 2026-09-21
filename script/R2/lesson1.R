@@ -83,8 +83,8 @@ augment(lm)
 
 OLS(x,y)
 OLS(d$x,d$y)
-COR_from_OLS(x,y)
-OLS_standardised(x,y)
+COR_from_OLS(d$x,d$y)
+OLS_standardised(d$x,d$y)
 
 d$pred = predict(lm)
 
@@ -105,9 +105,11 @@ d |>
 estimate = tidy(lm) |> 
   filter(term == 'x') |> 
   pull(estimate)
+
 std_error = tidy(lm) |> 
   filter(term == 'x') |> 
   pull(std.error)
+
 estimate/std_error
 
 # -- ti -- #
