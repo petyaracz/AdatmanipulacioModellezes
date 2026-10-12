@@ -5,6 +5,7 @@ set.seed(1337)
 library(tidyverse)
 library(broom)
 library(performance)
+library(sjPlot)
 
 # -- read -- #
 
@@ -58,17 +59,21 @@ summary(model)
 
 tidy(model, conf.int = T)
 
-plogis(-.8)
-plogis(-.4-1.6)
-plogis(-.4-.35)
+plogis(-.4)
+plogis(-.4-.9)
+
+plot_model(model, 'pred') # sjplot <3
+
+# This problem, done badly
 
 bad_model = lm(female ~ faculty, data = students)
 
 summary(bad_model)
 
+plot_model(bad_model, 'pred')
+
 plots = plot(check_model(bad_model))
 plots[[5]]
-
 
 # Log odds for Arts (reference category)
 log_odds_arts = -0.405
@@ -125,3 +130,14 @@ summary(fit2)
 tidy(fit2, conf.int = T)
 
 check_model(fit2)
+
+# -- titanik -- #
+
+install.packages('titanic')
+library(titanic)
+
+glimpse(titanic_train)
+
+# Survived ~ Age
+# Survived ~ Fare
+# Survived ~ Sex
