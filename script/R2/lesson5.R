@@ -118,5 +118,9 @@ plot_model(m4, 'pred', terms = c('edu','gender'))
 plot_model(m5, 'pred', terms = c('edu','gender'))
 
 anova(m4,m5)
-test_performance(m4,m5))
+test_performance(m4,m5)
 compare_performance(m4,m5, metrics = 'common')
+
+# finally
+
+d6 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/income_social_status.tsv')
