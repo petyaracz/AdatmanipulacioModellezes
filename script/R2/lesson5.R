@@ -29,8 +29,16 @@ plot(check_model(lm1, panel = F))
 d2 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/l5d2.tsv')
 # what is x? what is y?
 # plot y ~ x
+d2 |> 
+  ggplot(aes(nem,bér)) +
+  geom_boxplot()
 # fit a linear model
 # what is a (the intercept)? what is b? what are their confidence intervals?
+lm2 = lm(bér ~ nem, data = d2)
+# plot y ~ x
+# fit a linear model
+# what is a (the intercept)? what is b? what are their confidence intervals?
+tidy(lm2, conf.int = T)
 
 # factor levels:
 d2b = d2 |> 
@@ -124,3 +132,34 @@ compare_performance(m4,m5, metrics = 'common')
 # finally
 
 d6 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/income_social_status.tsv')
+
+d6 |> 
+  ggplot(aes(income,education,colour = region)) +
+  geom_point()
+
+d6 |> 
+  ggplot(aes(income,parent_education,colour = region)) +
+  geom_point()
+
+d6 |> 
+  ggplot(aes(income,age,colour = region)) +
+  geom_point()
+
+d6 |> 
+  ggplot(aes(income,region)) +
+  geom_boxplot()
+
+d6 |> 
+  ggplot(aes(education,parent_education)) +
+  geom_point() +
+  geom_smooth()
+
+d6 |> 
+  ggplot(aes(education,age)) +
+  geom_point() +
+  geom_smooth()
+
+lm6 = lm(income ~ education + parent_education + age + region, data = d6)
+
+tidy(lm6, conf.int = T)
+hist(d6$income)
