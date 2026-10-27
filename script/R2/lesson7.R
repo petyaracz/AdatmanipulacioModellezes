@@ -14,81 +14,38 @@ library(psych)
 
 # -- read -- #
 
-d = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/szeged.tsv')
+d = read_csv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/sl_sim.csv')
 
-d |> 
-  ggplot(aes(ymd,apparent_temperature)) +
-  geom_point()
 
-# -- main -- #
+# sl_interactions.csv: simulated data, 255 children aged 7-14
+# One row per participant. Loosely based on Lukics et al. (2026, Cognitive Science).
 
-# we look at the data
-glimpse(d)
-# daily averages for daylight hours between:
-range(d$ymd)
+# participant       ID, P001-P255
 
-# correlations
-d |> 
-  select(apparent_temperature,temperature) |> 
-  pairs.panels( 
-             method = "pearson", # correlation method
-             density = TRUE,  # show density plots
-             lm = T
-  )
-# + humidity
-d |> 
-  select(apparent_temperature,temperature,humidity) |> 
-  pairs.panels( 
-             method = "pearson", # correlation method
-             density = TRUE,  # show density plots
-             lm = T
-)
-# + wind speed
-d |> 
-  select(apparent_temperature,temperature,humidity,wind_speed) |> 
-  pairs.panels( 
-    method = "pearson", # correlation method
-    density = TRUE,  # show density plots
-    lm = T
-  )
-# + pressure
-d |> 
-  select(apparent_temperature,temperature,humidity,wind_speed,pressure) |> 
-  pairs.panels( 
-    method = "pearson", # correlation method
-    density = TRUE,  # show density plots
-    lm = T
-  )
-# + date
-d |> 
-  select(apparent_temperature,temperature,humidity,wind_speed,pressure,ymd) |> 
-  pairs.panels( 
-    method = "pearson", # correlation method
-    density = TRUE,  # show density plots
-    lm = T
-  )
+# --- outcome ---
+# sl_accuracy       statistical learning: proportion correct on an 80-trial
+#                   two-alternative forced choice test after exposure to an
+#                   artificial grammar; chance = 0.5 (observed 0.35-0.95)
 
-# linear models
+# --- group variables ---
+# diagnosis         TD   = typical development (n = 90)
+#                   DLD  = developmental language disorder (n = 60)
+#                   ASD  = autism spectrum disorder (n = 55)
+#                   ADHD = attention deficit hyperactivity disorder (n = 50)
+# sex               boy / girl (175 / 80); boys over-represented in the
+#                   clinical groups, as in real samples
 
-# test for:
+# --- background ---
+# age               age in years, one decimal (7.0-14.0)
+# nonverbal_iq      nonverbal IQ, standard score (population mean 100, SD 15);
+#                   groups matched on it by design (observed 77-132)
 
-# apparent_temperature ~ pred1 + pred2
-lm1 = lm(apparent_temperature ~ b1 + b2, data = d)
-lm2 = lm(apparent_temperature ~ b1 * b2, data = d)
-
-# checklist:
-# 1. coefficient estimates (tidy, plot_model('est'))
-tidy(lm1, conf.int = T)
-tidy(lm2, conf.int = T)
-plot_model(lm1, 'est')
-plot_model(lm2, 'est')
-# 2. visualise estimates
-plot_model(lm2, 'pred', terms = c('b1','b2'))
-plot_model(lm2, 'pred', terms = c('b1','b2 [0, 15, 50]')) # 'term [1,2,3]'
-# 3. compare performance (plot)
-plot(compare_performance(lm1,lm2))
-# 4. test performance
-test_wald(lm1,lm2)
-# 5. check model
-check_model(lm2)
-check_collinearity(lm2)
+# --- memory and processing tasks ---
+# digit_span        verbal working memory: digits recalled, forward + backward
+#                   total score (observed 4-17)
+# nonword_rep       phonological short-term memory: nonwords repeated
+#                   correctly, out of 40 (observed 14-39)
+# corsi_span        visuospatial working memory: longest block sequence
+#                   tapped back correctly (observed 3-9)
+# perceptual_speed  auditory simple reaction time in ms; HIGHER = SLOWER
+#                   (observed 217-536)
