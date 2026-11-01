@@ -1,16 +1,13 @@
 # -- head -- #
 
-install.packages('psych')
-
 library(tidyverse)
 library(broom)
 library(performance)
 library(sjPlot)
-library(psych)
 
-# -- quick test -- #
+install.packages('GGally')
 
-# https://forms.gle/Q1GaLixtpNwVsomd9
+library(GGally)
 
 # -- read -- #
 
@@ -49,3 +46,30 @@ d = read_csv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModelle
 #                   tapped back correctly (observed 3-9)
 # perceptual_speed  auditory simple reaction time in ms; HIGHER = SLOWER
 #                   (observed 217-536)
+
+# -- pairs -- #
+
+d |> 
+  ggpairs()
+
+d |> 
+  select(-participant) |> 
+  ggpairs()
+
+names(d)
+
+d |> 
+  ggpairs(columns = 4:10)
+
+d |> 
+  ggpairs(columns = 4:10, aes(colour = diagnosis))
+# https://ggobi.github.io/ggally/reference/ggpairs.html
+
+# -- eda -- #
+
+# create plots!
+# what correlates with what? what are possible interactions?
+
+# -- model fitting -- #
+
+# https://easystats.github.io/performance/reference/figures/figure_workflow.png
