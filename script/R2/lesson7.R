@@ -13,7 +13,6 @@ library(GGally)
 
 d = read_csv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/sl_sim.csv')
 
-
 # sl_interactions.csv: simulated data, 255 children aged 7-14
 # One row per participant. Loosely based on Lukics et al. (2026, Cognitive Science).
 
