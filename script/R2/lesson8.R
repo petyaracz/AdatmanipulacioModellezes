@@ -1,34 +1,34 @@
+# multivariate logistic regression
+
+# -- head -- #
+
 library(tidyverse)
-library(glue)
 library(broom)
 library(performance)
 library(sjPlot)
-library(psych)
+library(GGally)
 
-d = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/lesson8.tsv')
-d2 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/credit_risk.tsv')
+# -- read -- #
 
-# use pairs.panel to look at data
-pairs.panels(d)
-# what are the possible models?
-lm1 = glm(Survived ~ Class + Age + Sex, data = d, family = binomial)
-lm2 = glm(Survived ~ Class * Age + Sex, data = d, family = binomial)
-lm3 = glm(Survived ~ Class + Age * Sex, data = d, family = binomial)
-lm4 = glm(Survived ~ Class * Sex + Age, data = d, family = binomial)
+d = read_csv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/married.csv')
 
-# what is the best model?
-plot(compare_performance(lm1, lm2, lm3, lm4, metrics = 'common'))
-test_wald(lm1,lm4)
-check_collinearity(lm4)
-count(d,Sex,Class)
-# does the best model meet the assumptions?
-check_model(lm4)
-plot(compare_performance(lm1, lm2, lm3, metrics = 'common'))
-check_collinearity(lm3)
-tidy(lm3, conf.int = TRUE, conf.level = 0.95)
-plot_model(lm3, 'pred', terms = c('Age','Sex','Class'))
-# why? why not?
-# what is the best model that does meet the assumptions?
-# what does this model predict?
+# -- setup -- #
 
-d2
+d = d |> 
+  mutate(
+    age = scale(age),
+    pitch = scale(pitch),
+    extraversion = scale(extraversion),
+    sociability = scale(sociability),
+    married_factor = ifelse(married, 'married', 'not married')
+  )
+
+# -- plot -- #
+
+d |> 
+  ggplot(aes(job,married_factor)) +
+  geom_col()
+
+d |> 
+  ggplot(aes(age,married_factor)) +
+  geom_boxplot()
