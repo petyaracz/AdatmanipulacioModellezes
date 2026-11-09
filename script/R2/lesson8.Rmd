@@ -1,0 +1,393 @@
+---
+title: "A királyi őrség"
+output:
+  pdf_document: default
+  html_document: default
+date: "2026-11-09"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,eval = T)
+```
+
+```{r setup2}
+library(tidyverse)
+library(broom)
+library(performance)
+library(sjPlot)
+library(knitr)
+library(patchwork)
+d = read_csv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/kings_guard.csv')
+```
+
+## EDA
+
+### 1. Nézzük meg az adatokat.
+
+```{r glimpse}
+glimpse(d)
+
+summary(d)
+```
+
+Minden megfigyelés egy ember, aki jelentkezett a királyi őrségbe. Vajon felvették?
+
+- accepted: felvették-e az embert az őrségbe
+- son: az apja tagja a királyi őrségnek?
+- height: testmagasság (cm)
+- weight: súly (kg)
+- score: hány pontot ért el a felvételi vizsgán
+- grade: mi volt az iskolai átlaga
+- province: melyik sarkából jött a királyságnak
+
+### 2. Csináljuk meg szépen az adatokat. 
+
+A logikai változóknak adjunk címkéket. A folyamatos változókat skálázzuk és centralizáljuk a későbbi modellezéshez.
+
+```{r feature_engineering}
+d = d |> 
+  mutate(
+    accepted_factor = ifelse(accepted, 'accepted','rejected'),
+    ancestry = ifelse(son, "guard's son", "commoner"),
+    age_scaled = as.numeric(scale(age)),
+    height_scaled = as.numeric(scale(height)),
+    weight_scaled = as.numeric(scale(weight)),
+    score_scaled = as.numeric(scale(score)),
+    grade_scaled = as.numeric(scale(grade))
+  )
+```
+
+### 3. Sétáljunk végig egyenként ezeken a változókon.
+
+```{r eda1, fig.width=9, fig.height=9}
+p1 = d |> 
+  ggplot(aes(y = ancestry,fill = accepted_factor)) +
+  geom_bar(position = position_dodge()) +
+  theme_bw() +
+  scale_fill_grey() +
+  ggtitle('ancestry')
+
+p2 = d |> 
+  ggplot(aes(y = province,fill = accepted_factor)) +
+  geom_bar(position = position_dodge()) +
+  theme_bw() +
+  scale_fill_grey() +
+  ggtitle('province')
+
+p3 = d |> 
+  ggplot(aes(accepted_factor, age)) +
+  geom_boxplot() +
+  theme_bw() +
+  ggtitle('age')
+
+p4 = d |> 
+  ggplot(aes(accepted_factor, height)) +
+  geom_boxplot() +
+  theme_bw() +
+  ggtitle('height')
+
+p5 = d |> 
+  ggplot(aes(accepted_factor, weight)) +
+  geom_boxplot() +
+  theme_bw() +
+  ggtitle('weight')
+
+p6 = d |> 
+  ggplot(aes(accepted_factor, score)) +
+  geom_boxplot() +
+  theme_bw() +
+  ggtitle('score')
+
+p7 = d |> 
+  ggplot(aes(accepted_factor, grade)) +
+  geom_boxplot() +
+  theme_bw() +
+  ggtitle('grade')
+
+(p1 | p2 ) / ( p3 | p4 | p5) / (p6 | p7 | plot_spacer()) + plot_annotation(tag_levels = 'i') + plot_layout(guides = 'collect')
+
+```
+
+Elég gyanúsak azok a bloxplotok.
+
+```{r eda2, fig.height=6,fig.width=9}
+
+p3 = d |> 
+  ggplot(aes(accepted_factor, age)) +
+  geom_violin() +
+  geom_boxplot(width = .1) +
+  theme_bw()
+
+p4 = d |> 
+  ggplot(aes(accepted_factor, height)) +
+  geom_violin() +
+  geom_boxplot(width = .1) +
+  theme_bw()
+
+p5 = d |> 
+  ggplot(aes(accepted_factor, weight)) +
+  geom_violin() +
+  geom_boxplot(width = .1) +
+  theme_bw()
+
+p6 = d |> 
+  ggplot(aes(accepted_factor, score)) +
+  geom_violin() +
+  geom_boxplot(width = .1) +
+  theme_bw()
+
+p7 = d |> 
+  ggplot(aes(accepted_factor, grade)) +
+  geom_violin() +
+  geom_boxplot(width = .1) +
+  theme_bw()
+
+( p3 | p4 | p5) / (p6 | p7 | plot_spacer()) 
+```
+
+### 4. Az életkorral van valami kavarás.
+
+```{r eda3}
+d |> 
+  ggplot(aes(age)) +
+  geom_histogram() +
+  facet_wrap( ~ accepted_factor) +
+  theme_bw()
+```
+
+18 éves kor alatt és 50 éves kor fölött nem vesznek fel senkit. Ezt külön kell kezelni, mert ezt egy lineáris modell nem kapja el.
+
+```{r feature_engineering_2}
+d2 = d |> 
+  filter(
+    age >= 18 & age <= 50
+  )
+```
+
+Csináljuk meg újra a plotokat, most már csak azokra, akiknek egyáltalán van esélyük bekerülni.
+
+
+```{r eda1b, fig.width=9, fig.height=9}
+p1 = d2 |> 
+  ggplot(aes(y = ancestry,fill = accepted_factor)) +
+  geom_bar(position = position_dodge()) +
+  theme_bw() +
+  scale_fill_grey() +
+  ggtitle('ancestry')
+
+p2 = d2 |> 
+  ggplot(aes(y = province,fill = accepted_factor)) +
+  geom_bar(position = position_dodge()) +
+  theme_bw() +
+  scale_fill_grey() +
+  ggtitle('province')
+
+p3 = d2 |> 
+  ggplot(aes(accepted_factor, age)) +
+  geom_boxplot() +
+  theme_bw() +
+  ggtitle('age')
+
+p4 = d2 |> 
+  ggplot(aes(accepted_factor, height)) +
+  geom_boxplot() +
+  theme_bw() +
+  ggtitle('height')
+
+p5 = d2 |> 
+  ggplot(aes(accepted_factor, weight)) +
+  geom_boxplot() +
+  theme_bw() +
+  ggtitle('weight')
+
+p6 = d2 |> 
+  ggplot(aes(accepted_factor, score)) +
+  geom_boxplot() +
+  theme_bw() +
+  ggtitle('score')
+
+p7 = d |> 
+  ggplot(aes(accepted_factor, grade)) +
+  geom_boxplot() +
+  theme_bw() +
+  ggtitle('grade')
+
+(p1 | p2 ) / ( p3 | p4 | p5) / (p6 | p7 | plot_spacer()) + plot_annotation(tag_levels = 'i') + plot_layout(guides = 'collect')
+
+```
+
+
+### 5. Vannak összefüggések a prediktorváltozók között?
+
+```{r eda4, fig.width=7, fig.height=6}
+p1 = d2 |> 
+  ggplot(aes(grade,score,colour = accepted_factor)) +
+  geom_point(alpha = .5) +
+  theme_bw() +
+  facet_wrap( ~ accepted_factor) +
+  scale_colour_grey()
+
+p2 = d2 |> 
+  ggplot(aes(height,weight,colour = accepted_factor)) +
+  geom_point(alpha = .5) +
+  theme_bw() +
+  facet_wrap( ~ accepted_factor) +
+  scale_colour_grey()
+
+p1 / p2 + plot_layout(guides = 'collect')
+```
+
+Hát itt elég sok megfigyelés van, nem megyünk ezzel sokra.
+
+### 6. Vannak összefüggések a prediktorváltozók között? Máshogy nézzük.
+
+```{r eda5, fig.width=6, fig.height=7}
+p1 = d2 |> 
+  ggplot(aes(grade,score)) +
+  geom_density_2d() +
+  theme_bw() +
+  facet_wrap( ~ accepted_factor) +
+  ggtitle('grade / score')
+
+p2 = d2 |> 
+  ggplot(aes(height,weight)) +
+  geom_density_2d() +
+  theme_bw() +
+  facet_wrap( ~ accepted_factor) +
+  ggtitle('height / weight')
+
+p1 / p2
+
+```
+
+## Modellezés
+
+### 7. Mindent a levesbe.
+
+```{r lm1}
+
+glm1 = glm(accepted ~ 
+             son +
+             province +
+             age_scaled +
+             height_scaled +
+             weight_scaled +
+             score_scaled +
+             grade_scaled,
+           data = d2, # csak aki játszik 
+           family = binomial
+             )
+
+tidy(glm1, conf.int = T) |> 
+  kable(digits = 2)
+
+check_collinearity(glm1)
+check_residuals(glm1)
+check_overdispersion(glm1)
+```
+
+A modell okésan fest. A province, az age, és a grade nem csinál semmit. 
+
+### 8. Province, age, grade.
+
+Az a korrekt, ha ezeket egyenként kidobáljuk, és megnézzük, romlik-e a modell.
+
+```{r glm2}
+glm2a = glm(accepted ~ 
+             son +
+             # province +
+             age_scaled +
+             height_scaled +
+             weight_scaled +
+             score_scaled +
+             grade_scaled,
+           data = d2, # csak aki játszik 
+           family = binomial
+             )
+
+glm2b = glm(accepted ~ 
+             son +
+             province +
+             # age_scaled +
+             height_scaled +
+             weight_scaled +
+             score_scaled +
+             grade_scaled,
+           data = d2, # csak aki játszik 
+           family = binomial
+             )
+
+glm2c = glm(accepted ~ 
+             son +
+             province +
+             age_scaled +
+             height_scaled +
+             weight_scaled +
+             score_scaled, # +
+             # grade_scaled,
+           data = d2, # csak aki játszik 
+           family = binomial
+             )
+
+compare_performance(glm1,glm2a, metrics = 'common')
+compare_performance(glm1,glm2b, metrics = 'common')
+compare_performance(glm1,glm2c, metrics = 'common')
+```
+
+Nyugodt szívvel kidobálhatjuk ezt a három változót, nem csinálnak semmit.
+
+### 9. Weight és Height
+
+Van összefüggés a testsúly és a testmagasság hatása között? Illesszük újra az új, "minimalista modellt", és vessük össze a komplexebb változattal.
+
+```{r glm3}
+glm3a = glm(accepted ~ 
+             son +
+             height_scaled +
+             weight_scaled +
+             score_scaled, 
+           data = d2, # csak aki játszik 
+           family = binomial
+             )
+
+glm3b = glm(accepted ~ 
+             son +
+             height_scaled * weight_scaled +
+             score_scaled, 
+           data = d2, # csak aki játszik 
+           family = binomial
+             )
+
+compare_performance(glm3a,glm3b, metrics = 'common')
+test_likelihoodratio(glm3a,glm3b)
+test_bf(glm3a,glm3b)
+check_collinearity(glm3b)
+```
+
+Oksa. Megvan a legjobb modell. Ábrázoljuk.
+
+### 10. Oksa. Megvan a legjobb modell. Ábrázoljuk.
+
+```{r viz, fig.width=7,fig.height=6}
+p1 = plot_model(glm3b, 'pred', terms = c('height_scaled','weight_scaled')) +
+  theme_bw() +
+  scale_fill_grey() +
+  scale_colour_grey()
+
+p2 = plot_model(glm3b, 'pred', terms = c('weight_scaled','height_scaled')) +
+  theme_bw() +
+  scale_fill_grey() +
+  scale_colour_grey()
+
+p1 / p2
+```
+
+### 11. Ezt az interakciót még kicsit emésztgetni kell.
+
+```{r int2, fig.width=5,fig.height=4}
+d |> 
+  ggplot(aes(weight,height,fill = accepted_factor)) +
+  geom_tile() +
+  ggthemes::theme_few() +
+  ggthemes::scale_fill_colourblind()
+```
