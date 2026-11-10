@@ -1,68 +1,137 @@
+# installs?
+
+install.packages('glmmTLMB')
+install.packages('broom.mixed')
+install.packages('patchwork')
+
+# -- setup -- #
+
 library(tidyverse)
 library(ggplot2)
 library(glmmTMB)
 library(broom.mixed)
 library(sjPlot)
 library(performance)
+library(patchwork)
 
-d <- d = read_csv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/lexical_decision.csv') |>
+# -- read, centralise -- #
+
+d = read_csv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/lexical_decision.csv') |>
   mutate(age_c = participant_age - 18, freq_c = word_frequency - 4)
 
 # 48 participants x 100 words = 4800 trials. Participants and words are
 # crossed: every participant saw every word.
 
-# ---- 1. Trials in an ordinary model -----------------------------------------
+# -- aggregate -- #
 
-m_lm <- lm(log_rt ~ freq_c * age_c, d)                                 # AIC 2657.6
-summary(m_lm)
-# Estimates are identical to the mixed model (balanced, complete data), but
-# the SEs are wrong: age 0.0008 (mixed: 0.0042), frequency 0.0041 (0.0102),
-# interaction 0.0007 (0.0005, so here the lm is too cautious).
+participants = d |> 
+  summarise(
+    log_rt = mean(log_rt),
+    .by = c(participant,participant_age,age_c)
+  )
 
-# ---- 2. Aggregate over words: one row per participant ------------------------
+words = d |> 
+  summarise(
+    log_rt = mean(log_rt),
+    .by = c(word,word_frequency,freq_c)
+  )
 
-by_participant <- d |>
-  group_by(participant, participant_age, participant_session) |>
-  summarise(log_rt = mean(log_rt), .groups = "drop") |>
-  mutate(age_c = participant_age - 18)
-m_bp <- lm(log_rt ~ age_c, by_participant)
-summary(m_bp)  # age -0.0444 (SE 0.0042): fine, but frequency and the interaction are gone
 
-# The funnel: children vary far more than young adults
-ggplot(by_participant, aes(participant_age, log_rt)) + geom_point() + geom_smooth(method = "lm")
+# -- eda -- #
 
-# ---- 3. Aggregate over participants: one row per word ------------------------
+p1 = d |> 
+  ggplot(aes(participant_age,log_rt)) +
+  geom_point() +
+  theme_bw() +
+  geom_smooth(method = 'lm') +
+  ggtitle('participant responses')
 
-by_word <- d |>
-  group_by(word, word_frequency, word_class) |>
-  summarise(log_rt = mean(log_rt), .groups = "drop") |>
-  mutate(freq_c = word_frequency - 4)
-m_bw <- lm(log_rt ~ freq_c, by_word)
-summary(m_bw)  # frequency -0.0722 (SE 0.0103): fine, but age and the interaction are gone
+p2 = participants |> 
+  ggplot(aes(participant_age,log_rt)) +
+  geom_point() +
+  theme_bw() +
+  geom_smooth(method = 'lm') +
+  ggtitle('participants, aggregated')
 
-ggplot(by_word, aes(word_frequency, log_rt)) + geom_point() + geom_smooth(method = "lm")
+p3 = d |> 
+  ggplot(aes(word_frequency,log_rt)) +
+  geom_point() +
+  theme_bw() +
+  geom_smooth(method = 'lm') +
+  ggtitle('word responses')
 
-# ---- 4. The mixed model -------------------------------------------------------
+p4 = words |> 
+  ggplot(aes(word_frequency,log_rt)) +
+  geom_point() +
+  theme_bw() +
+  geom_smooth(method = 'lm') +
+  ggtitle('words, aggregated')
 
-m <- glmmTMB(log_rt ~ freq_c * age_c + (1 | participant) + (1 | word), d)  # AIC 735.3
-summary(m)
-# Expected: intercept -0.246, frequency -0.071 (SE 0.010), age -0.044 (0.004),
-# interaction 0.0048 (0.0005). SDs: participant 0.165, word 0.110, residual 0.25.
+p1 + p2 + p3 + p4 + plot_layout(ncol = 2)
 
-m_p <- glmmTMB(log_rt ~ freq_c * age_c + (1 | participant), d)            # AIC 1343.8
-m_w <- glmmTMB(log_rt ~ freq_c * age_c + (1 | word), d)                   # AIC 2284.9
-AIC(m_lm, m_p, m_w, m)
+d |> 
+  ggplot(aes(participant_age,word_frequency, fill = log_rt)) +
+  geom_tile() # huha
 
-m_noint <- glmmTMB(log_rt ~ freq_c + age_c + (1 | participant) + (1 | word), d)  # +75.3
-AIC(m_noint, m)
+d |> 
+  mutate(
+    participant = fct_reorder(participant, participant_age),
+    word = fct_reorder(word, word_frequency)
+  ) |> 
+  ggplot(aes(participant,word, fill = log_rt)) +
+  geom_tile() +
+  scale_fill_viridis_b() +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank()
+  )
 
-# ---- 5. Null predictors: the trial-level lm is fooled, the mixed model is not --
+# -- linear modelling -- #
 
-AIC(m_lm, update(m_lm, . ~ . + participant_session))  # -9.2
-AIC(m, update(m, . ~ . + participant_session))        # +1.6
-AIC(m_lm, update(m_lm, . ~ . + word_class))           # -3.8
-AIC(m, update(m, . ~ . + word_class))                 # +1.1
+# everything
 
-# The aggregates agree with the mixed model on the null predictors
-AIC(m_bp, update(m_bp, . ~ . + participant_session))  # +1.6
-AIC(m_bw, update(m_bw, . ~ . + word_class))           # +1.1
+lm1 = lm(log_rt ~ freq_c * age_c, d)
+tidy(lm1, conf.int = T)
+
+# participants
+
+lm2 = lm(log_rt ~ age_c, participants)
+tidy(lm2, conf.int = T)
+
+# words
+
+lm3 = lm(log_rt ~ freq_c, words)
+tidy(lm3, conf.int = T)
+
+# -- linear mixed model / hierarchical model -- #
+
+lmm1 = glmmTMB(log_rt ~ freq_c * age_c + (1 | participant) + (1 | word), d)
+
+tidy(lmm1, conf.int = T)
+# cf
+tidy(lm1, conf.int = T)
+
+plot_model(lmm1, 'pred', terms = c('age_c','freq_c'))
+plot_model(lm1, 'pred', terms = c('age_c','freq_c'))
+
+# -- false flags -- #
+
+lm4 = lm(log_rt ~ participant_session, d)
+tidy(lm4, conf.int = T)
+lmm2 = glmmTMB(log_rt ~ participant_session + (1|participant), d)
+tidy(lmm2, conf.int = T)
+# hopszika
+
+# -- önök kérték -- #
+
+d = read_csv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/wine.csv')
+
+# rater: rater ID, r01 to r40
+# wine: wine ID, w01 to w32
+# position: order in which this rater tasted this wine, 1 to 32
+# rating: how much the rater liked the wine, 0 to 100
+# wine_price: shop price in euros, 3 to 54
+# wine_colour: red or white
+# wine_alcohol: % ABV, 11.4 to 14.6
+# wine_acidity: titratable acidity in g/L, 4.6 to 7.5
+# rater_expertise: novice (23 raters) or expert (17)
