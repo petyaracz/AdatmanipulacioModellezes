@@ -1,124 +1,68 @@
-# -- intro -- #
-
-# https://mfviz.com/hierarchical-models/
-# https://m-clark.github.io/posts/2019-05-14-shrinkage-in-mixed-models/
-
-# -- setup -- #
-
-# install the glmmTMB and broom.mixed packages
-install.packages("glmmTMB")
-install.packages("broom.mixed")
-
 library(tidyverse)
-library(broom.mixed)
-library(performance)
-library(sjPlot)
+library(ggplot2)
 library(glmmTMB)
+library(broom.mixed)
+library(sjPlot)
+library(performance)
 
-# -- read -- #
+d <- d = read_csv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/lexical_decision.csv') |>
+  mutate(age_c = participant_age - 18, freq_c = word_frequency - 4)
 
-d = read_tsv("https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/lesson9.tsv")
+# 48 participants x 100 words = 4800 trials. Participants and words are
+# crossed: every participant saw every word.
 
-# -- take a look -- #
+# ---- 1. Trials in an ordinary model -----------------------------------------
 
-glimpse(d)
+m_lm <- lm(log_rt ~ freq_c * age_c, d)                                 # AIC 2657.6
+summary(m_lm)
+# Estimates are identical to the mixed model (balanced, complete data), but
+# the SEs are wrong: age 0.0008 (mixed: 0.0042), frequency 0.0041 (0.0102),
+# interaction 0.0007 (0.0005, so here the lm is too cautious).
 
-unique(d$participant)
-unique(d$word)
+# ---- 2. Aggregate over words: one row per participant ------------------------
 
-# -- visualise -- #
+by_participant <- d |>
+  group_by(participant, participant_age, participant_session) |>
+  summarise(log_rt = mean(log_rt), .groups = "drop") |>
+  mutate(age_c = participant_age - 18)
+m_bp <- lm(log_rt ~ age_c, by_participant)
+summary(m_bp)  # age -0.0444 (SE 0.0042): fine, but frequency and the interaction are gone
 
-d |> 
-  ggplot(aes(word_familiarity,log_rt)) +
-  geom_point() +
-  geom_smooth(method = 'lm')
+# The funnel: children vary far more than young adults
+ggplot(by_participant, aes(participant_age, log_rt)) + geom_point() + geom_smooth(method = "lm")
 
-d |> 
-  ggplot(aes(participant_vocabulary_size,log_rt)) +
-  geom_point() +
-  geom_smooth(method = 'lm')
+# ---- 3. Aggregate over participants: one row per word ------------------------
 
-# -- participant-level effects -- #
+by_word <- d |>
+  group_by(word, word_frequency, word_class) |>
+  summarise(log_rt = mean(log_rt), .groups = "drop") |>
+  mutate(freq_c = word_frequency - 4)
+m_bw <- lm(log_rt ~ freq_c, by_word)
+summary(m_bw)  # frequency -0.0722 (SE 0.0103): fine, but age and the interaction are gone
 
-d |> 
-  filter(keep_participant) |> 
-  ggplot(aes(word_familiarity,log_rt)) +
-  geom_point() +
-  geom_smooth(method = 'lm') +
-  facet_wrap( ~ participant)
+ggplot(by_word, aes(word_frequency, log_rt)) + geom_point() + geom_smooth(method = "lm")
 
-d |> 
-  filter(keep_word) |> 
-  ggplot(aes(participant_vocabulary_size,log_rt)) +
-  geom_point() +
-  geom_smooth(method = 'lm') +
-  facet_wrap( ~ word)
+# ---- 4. The mixed model -------------------------------------------------------
 
-# -- aggregate -- #
+m <- glmmTMB(log_rt ~ freq_c * age_c + (1 | participant) + (1 | word), d)  # AIC 735.3
+summary(m)
+# Expected: intercept -0.246, frequency -0.071 (SE 0.010), age -0.044 (0.004),
+# interaction 0.0048 (0.0005). SDs: participant 0.165, word 0.110, residual 0.25.
 
-## participants
+m_p <- glmmTMB(log_rt ~ freq_c * age_c + (1 | participant), d)            # AIC 1343.8
+m_w <- glmmTMB(log_rt ~ freq_c * age_c + (1 | word), d)                   # AIC 2284.9
+AIC(m_lm, m_p, m_w, m)
 
-participants = d |> 
-  group_by(participant,participant_vocabulary_size) |> 
-  summarise(mean_participant_rt = mean(log_rt))
+m_noint <- glmmTMB(log_rt ~ freq_c + age_c + (1 | participant) + (1 | word), d)  # +75.3
+AIC(m_noint, m)
 
-participants |> 
-  ggplot(aes(participant_vocabulary_size,mean_participant_rt)) +
-  geom_point()
+# ---- 5. Null predictors: the trial-level lm is fooled, the mixed model is not --
 
-plm1 = lm(log_rt ~ participant_vocabulary_size, data = d)
-plm2 = lm(mean_participant_rt ~ participant_vocabulary_size, data = participants)
-plm1b = lm(log_rt ~ participant_vocabulary_size * participant, data = d)
+AIC(m_lm, update(m_lm, . ~ . + participant_session))  # -9.2
+AIC(m, update(m, . ~ . + participant_session))        # +1.6
+AIC(m_lm, update(m_lm, . ~ . + word_class))           # -3.8
+AIC(m, update(m, . ~ . + word_class))                 # +1.1
 
-tidy(plm1, conf.int = T)
-tidy(plm2, conf.int = T)
-tidy(plm1b, conf.int = T) # lol
-
-## words
-
-# word, word_familiarity
-
-# wlm1, wlm2
-
-# -- mixed model -- #
-
-plm3 = glmmTMB(log_rt ~ participant_vocabulary_size + (1|participant), data = d)
-
-tidy(plm1, conf.int = T)
-tidy(plm2, conf.int = T)
-tidy(plm3, conf.int = T)
-
-# wlm3...
-
-# -- nested model -- #
-
-lmm1 = glmmTMB(log_rt ~ participant_vocabulary_size + word_familiarity + (1|participant) + (1|word), data = d)
-
-tidy(lmm1, conf.int = T)
-
-lmm2 = glmmTMB(log_rt ~ participant_vocabulary_size * word_familiarity + (1|participant) + (1|word), data = d)
-
-tidy(lmm2, conf.int = T)
-
-# health
-check_model(lmm1)
-check_model(lmm2)
-# check_collinearity(lmm1)
-# check_autocorrelation(lmm1)
-# check_heteroscedasticity(lmm1)
-# check_residuals(lmm1)
-# check_collinearity(lmm2)
-# check_autocorrelation(lmm2)
-# check_heteroscedasticity(lmm2)
-# check_residuals(lmm2)
-
-# comparison
-plot(compare_performance(lmm1,lmm2, metrics = 'common'))
-test_likelihoodratio(lmm1,lmm2)
-test_performance(lmm2,lmm1)
-
-# viz
-plot_model(lmm2, 'est')
-
-plot_model(lmm2, 'pred', terms = c('participant_vocabulary_size','word_familiarity'))
-plot_model(lmm2, 'pred', terms = c('word_familiarity','participant_vocabulary_size'))
+# The aggregates agree with the mixed model on the null predictors
+AIC(m_bp, update(m_bp, . ~ . + participant_session))  # +1.6
+AIC(m_bw, update(m_bw, . ~ . + word_class))           # +1.1
