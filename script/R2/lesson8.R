@@ -16,10 +16,10 @@ d = read_csv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModelle
 
 d = d |> 
   mutate(
-    age = scale(age),
-    pitch = scale(pitch),
-    extraversion = scale(extraversion),
-    sociability = scale(sociability),
+    age = as.numeric(scale(age)),
+    pitch = as.numeric(scale(pitch)),
+    extraversion = as.numeric(scale(extraversion)),
+    sociability = as.numeric(scale(sociability)),
     married_factor = ifelse(married, 'married', 'not married')
   )
 
