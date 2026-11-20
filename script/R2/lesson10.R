@@ -1,82 +1,41 @@
-# -- header -- #
-
-install.packages('maps')
 
 library(tidyverse)
+library(ggplot2)
 library(glmmTMB)
 library(broom.mixed)
-library(performance)
 library(sjPlot)
-library(maps)
+library(performance)
+library(patchwork)
 
-world = map_data("world")
-tidy2 = partial(tidy, conf.int = T)
+d = read_csv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/wine.csv')
 
-# -- read -- #
+# rater: rater ID, r01 to r40
+# wine: wine ID, w01 to w32
+# position: order in which this rater tasted this wine, 1 to 32
+# rating: how much the rater liked the wine, 0 to 100
+# wine_price: shop price in euros, 3 to 54
+# wine_colour: red or white
+# wine_alcohol: % ABV, 11.4 to 14.6
+# wine_acidity: titratable acidity in g/L, 4.6 to 7.5
+# rater_expertise: novice (23 raters) or expert (17)
 
-d1 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/anthropology1.tsv')
-d2 = read_tsv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModellezes/main/dat/R2/anthropology2.tsv')
+# -- centralise -- #
 
-# -- gods -- #
+d = d |> 
+  mutate(
+    rating_c = rating - 50,
+    wine_price_c = wine_price - 30,
+    wine_alcohol_c = wine_alcohol - 13,
+    wine_acidity_c = wine_acidity - 6
+  )
 
-glimpse(d1)
+# -- visualise -- #
 
-## visuals
+ggplot(d, aes(wine_price, rating, group = rater, colour = rater_expertise)) +
+  geom_smooth(method = "lm", se = FALSE, linewidth = 0.4) + scale_x_log10()
+ggplot(d, aes(wine_alcohol, rating, group = rater, colour = rater_expertise)) +
+  geom_smooth(method = "lm", se = FALSE, linewidth = 0.4)
 
-ggplot() +
-  geom_polygon(data = world, aes(x=long, y = lat, group = group), fill = "lightgrey") + 
-  coord_fixed(1.3) +
-  geom_point(data = d1, aes(x = Long, y = Lat, colour = moral_gods)) +
-  scale_colour_viridis_c() +
-  theme_bw()
+# ... 
 
-d1 |> 
-  ggplot(aes(social_complexity,moral_gods)) +
-  geom_point()
-
-d1 |> 
-  ggplot(aes(as.factor(social_complexity),fill = as.factor(moral_gods))) +
-  geom_bar(position = position_dodge())
-
-d1 |> 
-  ggplot(aes(as.factor(social_complexity),fill = as.factor(moral_gods))) +
-  geom_bar(position = position_dodge()) +
-  coord_flip()
-
-d1 |> 
-  ggplot(aes(as.factor(subsistence),fill = as.factor(moral_gods))) +
-  geom_bar(position = position_dodge()) +
-  coord_flip()
-
-d1 |> 
-  ggplot(aes(as.factor(social_complexity),fill = as.factor(moral_gods))) +
-  geom_bar(position = position_dodge()) +
-  coord_flip() +
-  facet_wrap( ~ region)
-
-## models
-
-lm1 = lm(moral_gods ~ social_complexity + subsistence, data = d1)
-lm2 = glmmTMB(moral_gods ~ social_complexity + subsistence + (1|region), data = d1)
-lm3 = glmmTMB(moral_gods ~ social_complexity + subsistence + (1 + social_complexity|region), data = d1)
-lm4 = glmmTMB(moral_gods ~ social_complexity + subsistence + (1 + subsistence|region), data = d1)
-lm5 = glmmTMB(moral_gods ~ social_complexity + subsistence + (1 + social_complexity + subsistence|region), data = d1)
-
-## evaluation
-
-plot(compare_performance(lm1,lm2,lm3))
-
-tidy2(lm1)
-tidy2(lm2)
-tidy2(lm3)
-
-plot_model(lm1, 'pred', terms = 'social_complexity')
-plot_model(lm2, 'pred', terms = 'social_complexity')
-plot_model(lm3, 'pred', terms = 'social_complexity')
-plot_model(lm1, 'pred', terms = 'subsistence')
-plot_model(lm2, 'pred', terms = 'subsistence')
-plot_model(lm3, 'pred', terms = 'subsistence')
-
-# -- grammar -- #
-
-glimpse(d2)
+# -- fit -- #
