@@ -36,7 +36,6 @@ words = d |>
     .by = c(word,word_frequency,freq_c)
   )
 
-
 # -- eda -- #
 
 p1 = d |> 
