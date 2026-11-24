@@ -1,6 +1,5 @@
 
 library(tidyverse)
-library(ggplot2)
 library(glmmTMB)
 library(broom.mixed)
 library(sjPlot)
@@ -23,6 +22,7 @@ d = read_csv('https://raw.githubusercontent.com/petyaracz/AdatmanipulacioModelle
 
 d = d |> 
   mutate(
+    rater_expertise = fct_relevel(rater_expertise, 'novice'),
     rating_c = rating - 50,
     wine_price_c = wine_price - 30,
     wine_alcohol_c = wine_alcohol - 13,
